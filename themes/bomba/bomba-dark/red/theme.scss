@@ -23,10 +23,12 @@ $textColorMuted: #888888 !default; // Muted text
 // Border colors
 $borderColor: #3a3a3a !default;
 
-// Custom foreign background colors
+// Custom colors
 $customNavbarColor: #5a141d !default;
 $customBg: #0f172a !default;
 $customTextColor: #fff !default;
+
+$customCardColorOne: #334155 !default;
 
 // Imports
 @import "../_variables";
@@ -38,4 +40,5 @@ $customTextColor: #fff !default;
     --custom-navbar-color: #{$customNavbarColor};
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
+    --custom-card-color-one: #{$customCardColorOne};
 }

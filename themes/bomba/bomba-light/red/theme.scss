@@ -8,10 +8,13 @@ $highlightBg: #fef2f2 !default;
 $highlightTextColor: $primaryDarkerColor !default;
 $highlightFocusBg: rgba($primaryColor, 0.24) !default;
 
-// Custom foreign background colors
+// Custom colors
 $customNavbarColor: #7F1D29 !default;
 $customBg: #f8fafc !default;
 $customTextColor: #000 !default;
+
+$customCardColorOne: #f1f5f9 !default;
+
 
 @import "../_variables";
 @import "./_fonts";
@@ -22,4 +25,5 @@ $customTextColor: #000 !default;
     --custom-navbar-color: #{$customNavbarColor};
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
+    --custom-card-color-one: #{$customCardColorOne};
 }
