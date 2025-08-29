@@ -4,12 +4,38 @@ $primaryDarkColor: #c0392b !default;
 $primaryDarkerColor: #922b21 !default;
 $primaryTextColor: #ffffff !default;
 
-$highlightBg: #1e1e1e !default;
+$highlightBg: #1a0f0f !default;
 $highlightTextColor: #d0d0d0 !default;
 $highlightFocusBg: rgba($primaryColor, 0.24) !default;
+
+// Surface colors for dark backgrounds
+$surface0: #0f0f0f !default; // Darkest - main backgrounds
+$surface50: #1a1a1a !default; // Cards, panels
+$surface100: #2a2a2a !default; // Elevated surfaces
+$surface200: #3a3a3a !default; // Higher elevation
+$surface300: #4a4a4a !default; // Interactive elements
+
+// Text colors
+$textColor: #e0e0e0 !default; // Primary text
+$textColorSecondary: #b0b0b0 !default; // Secondary text
+$textColorMuted: #888888 !default; // Muted text
+
+// Border colors
+$borderColor: #3a3a3a !default;
+
+// Custom foreign background colors
+$customNavbarColor: #5a141d !default;
+$customBg: #0f172a !default;
+$customTextColor: #fff !default;
 
 // Imports
 @import "../_variables";
 @import "./_fonts";
 @import "../../../../theme-base/_components";
 @import "../_extensions";
+
+:root {
+    --custom-navbar-color: #{$customNavbarColor};
+    --custom-bg: #{$customBg};
+    --custom-text-color: #{$customTextColor};
+}

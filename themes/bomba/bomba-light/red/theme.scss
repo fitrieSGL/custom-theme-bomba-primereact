@@ -8,7 +8,18 @@ $highlightBg: #fef2f2 !default;
 $highlightTextColor: $primaryDarkerColor !default;
 $highlightFocusBg: rgba($primaryColor, 0.24) !default;
 
+// Custom foreign background colors
+$customNavbarColor: #7F1D29 !default;
+$customBg: #f8fafc !default;
+$customTextColor: #000 !default;
+
 @import "../_variables";
 @import "./_fonts";
 @import "../../../../theme-base/_components";
 @import "../_extensions";
+
+:root {
+    --custom-navbar-color: #{$customNavbarColor};
+    --custom-bg: #{$customBg};
+    --custom-text-color: #{$customTextColor};
+}

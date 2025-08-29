@@ -10,4 +10,9 @@ To compile the theme, run:
 ```bash
 sass --update ./themes/bomba/bomba-dark/red/theme.scss:themes/bomba/bomba-dark/red/output/theme.css
 ```
+
+```bash
+sass --update ./themes/bomba/bomba-light/red/theme.scss:themes/bomba/bomba-light/red/output/theme.css
+```
+
 Then copy the theme.css
