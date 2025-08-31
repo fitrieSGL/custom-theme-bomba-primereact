@@ -89,6 +89,28 @@ $fieldsetTextColor: #e0e0e0 !default;
 $fieldsetLegendColor: #ffffff !default;
 $fieldsetToggleColor: #e0e0e0 !default;
 $fieldsetToggleHoverColor: #e74c3c !default;
+
+// Tabs
+$tabsBg: #1e293b !default;
+$tabsNavBg: #334155 !default;
+$tabsContentBg: #1e293b !default;
+$tabsBorder: #{$borderColor} !default;
+$tabsTextColor: #e0e0e0 !default;
+$tabsActiveTextColor: #ffffff !default;
+$tabsHoverBg: #475569 !default;
+$tabsActiveBg: #e74c3c !default;
+$tabsActiveIndicator: #e74c3c !default;
+$tabsDisabledColor: #6b7280 !default;
+
+// Dialog
+$dialogBg: #1e293b !default;
+$dialogHeaderBg: #334155 !default;
+$dialogContentBg: #1e293b !default;
+$dialogFooterBg: #334155 !default;
+$dialogBorder: #{$borderColor} !default;
+$dialogTextColor: #e0e0e0 !default;
+$dialogHeaderTextColor: #ffffff !default;
+$dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -177,6 +199,28 @@ $fieldsetToggleHoverColor: #e74c3c !default;
     --fieldset-legend-color: #{$fieldsetLegendColor};
     --fieldset-toggle-color: #{$fieldsetToggleColor};
     --fieldset-toggle-hover-color: #{$fieldsetToggleHoverColor};
+
+    // Tabs
+    --tabs-bg: #{$tabsBg};
+    --tabs-nav-bg: #{$tabsNavBg};
+    --tabs-content-bg: #{$tabsContentBg};
+    --tabs-border: #{$tabsBorder};
+    --tabs-text-color: #{$tabsTextColor};
+    --tabs-active-text-color: #{$tabsActiveTextColor};
+    --tabs-hover-bg: #{$tabsHoverBg};
+    --tabs-active-bg: #{$tabsActiveBg};
+    --tabs-active-indicator: #{$tabsActiveIndicator};
+    --tabs-disabled-color: #{$tabsDisabledColor};
+
+    // Dialog
+    --dialog-bg: #{$dialogBg};
+    --dialog-header-bg: #{$dialogHeaderBg};
+    --dialog-content-bg: #{$dialogContentBg};
+    --dialog-footer-bg: #{$dialogFooterBg};
+    --dialog-border: #{$dialogBorder};
+    --dialog-text-color: #{$dialogTextColor};
+    --dialog-header-text-color: #{$dialogHeaderTextColor};
+    --dialog-mask-bg: #{$dialogMaskBg};
 }
 
 
@@ -312,6 +356,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
         }
     }
 }
+
 //*------------------------------ DataTable ------------------------------*//
 
 //*------------------------------ Input ------------------------------*//
@@ -1083,6 +1128,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
         }
     }
 }
+
 //*------------------------------ Stepper ------------------------------*//
 
 
@@ -1119,7 +1165,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
 
             &.p-fileupload-choose-button {
                 background: var(--fileupload-button-bg);
-                
+
                 &:hover {
                     background: var(--fileupload-button-hover-bg);
                 }
@@ -1128,7 +1174,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
             &.p-fileupload-upload-button {
                 background: #22c55e;
                 border-color: #22c55e;
-                
+
                 &:hover {
                     background: #16a34a;
                     border-color: #16a34a;
@@ -1144,7 +1190,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
             &.p-fileupload-cancel-button {
                 background: #dc3545;
                 border-color: #dc3545;
-                
+
                 &:hover {
                     background: #c82333;
                     border-color: #c82333;
@@ -1179,7 +1225,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
             text-align: center;
             padding: 2rem;
             color: var(--text-color-muted);
-            
+
             i {
                 font-size: 3rem;
                 margin-bottom: 1rem;
@@ -1208,17 +1254,17 @@ $fieldsetToggleHoverColor: #e74c3c !default;
                 }
 
                 // File info
-                > div {
+                >div {
                     color: var(--fileupload-text-color);
-                    
+
                     &:first-child {
                         flex: 1;
-                        
+
                         .p-fileupload-filename {
                             font-weight: 600;
                             margin-bottom: 0.25rem;
                         }
-                        
+
                         .p-fileupload-filesize {
                             color: var(--text-color-secondary);
                             font-size: 0.875rem;
@@ -1356,7 +1402,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
 // Drag and drop overlay
 .p-fileupload-drag-highlight {
     position: relative;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -1369,7 +1415,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
         border-radius: 8px;
         z-index: 1000;
     }
-    
+
     &::after {
         content: 'Drop files here';
         position: absolute;
@@ -1424,6 +1470,7 @@ $fieldsetToggleHoverColor: #e74c3c !default;
         background: var(--fileupload-progress-bg);
     }
 }
+
 //*------------------------------ File Upload ------------------------------*//
 
 
@@ -1650,6 +1697,508 @@ $fieldsetToggleHoverColor: #e74c3c !default;
         }
     }
 }
+
 //*------------------------------ Fieldset ------------------------------*//
+
+
+//*------------------------------ Tabs ------------------------------*//
+.p-tabview {
+    background: var(--tabs-bg);
+    color: var(--tabs-text-color);
+
+    // Tab Navigation
+    .p-tabview-nav {
+        background: var(--tabs-nav-bg);
+        border-bottom: 1px solid var(--tabs-border);
+        border-radius: 8px 8px 0 0;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        list-style: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        // Individual tab header
+        .p-tabview-nav-link {
+            background: transparent;
+            color: var(--tabs-text-color);
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 1rem 1.5rem;
+            margin: 0;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-weight: 500;
+
+            &:hover {
+                background: var(--tabs-hover-bg);
+                color: var(--tabs-active-text-color);
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: inset 0 0 0 2px rgba($primaryColor, 0.2);
+            }
+
+            // Tab icon
+            .p-tabview-nav-icon {
+                margin-right: 0.5rem;
+                color: inherit;
+            }
+
+            // Tab title
+            .p-tabview-title {
+                color: inherit;
+                font-weight: inherit;
+            }
+        }
+
+        // Active tab
+        .p-tabview-nav-link.p-highlight {
+            background: $highlightBg;
+            color: $highlightTextColor;
+            border-bottom-color: var(--tabs-active-indicator);
+            font-weight: 600;
+
+            &:hover {
+                background: $highlightBg;
+                color: $highlightTextColor;
+            }
+        }
+
+        // Disabled tab
+        .p-tabview-nav-link:disabled,
+        .p-tabview-nav-link.p-disabled {
+            color: var(--tabs-disabled-color);
+            cursor: not-allowed;
+            opacity: 0.6;
+
+            &:hover {
+                background: transparent;
+                color: var(--tabs-disabled-color);
+            }
+        }
+
+        // First tab
+        .p-tabview-nav-link:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        // Last tab
+        .p-tabview-nav-link:last-child {
+            border-top-right-radius: 8px;
+        }
+    }
+
+    // Tab Content Panels
+    .p-tabview-panels {
+        background: var(--tabs-content-bg);
+        border: 1px solid var(--tabs-border);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        color: var(--tabs-text-color);
+
+        .p-tabview-panel {
+            padding: 1.5rem;
+
+            &.p-hidden {
+                display: none;
+            }
+        }
+    }
+
+    // Scrollable tabs navigation
+    &.p-tabview-scrollable {
+        .p-tabview-nav-container {
+            position: relative;
+
+            .p-tabview-nav-prev,
+            .p-tabview-nav-next {
+                background: var(--tabs-nav-bg);
+                color: var(--tabs-text-color);
+                border: 1px solid var(--tabs-border);
+                width: 2.5rem;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background: var(--tabs-hover-bg);
+                    color: var(--tabs-active-text-color);
+                }
+
+                &:disabled {
+                    color: var(--tabs-disabled-color);
+                    cursor: not-allowed;
+                    opacity: 0.6;
+
+                    &:hover {
+                        background: var(--tabs-nav-bg);
+                        color: var(--tabs-disabled-color);
+                    }
+                }
+            }
+
+            .p-tabview-nav-prev {
+                border-right: none;
+                border-radius: 8px 0 0 0;
+            }
+
+            .p-tabview-nav-next {
+                border-left: none;
+                border-radius: 0 8px 0 0;
+            }
+        }
+    }
+}
+
+// TabMenu Dark Mode (alternative tab component)
+.p-tabmenu {
+    .p-tabmenu-nav {
+        background: var(--tabs-nav-bg);
+        border: 1px solid var(--tabs-border);
+        border-radius: 8px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        overflow-x: auto;
+
+        .p-tabmenuitem {
+            .p-menuitem-link {
+                background: transparent;
+                color: var(--tabs-text-color);
+                border: none;
+                border-bottom: 3px solid transparent;
+                padding: 1rem 1.5rem;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                transition: all 0.2s;
+                cursor: pointer;
+                font-weight: 500;
+
+                &:hover {
+                    background: var(--tabs-hover-bg);
+                    color: var(--tabs-active-text-color);
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: inset 0 0 0 2px rgba($primaryColor, 0.2);
+                }
+
+                .p-menuitem-icon {
+                    margin-right: 0.5rem;
+                    color: inherit;
+                }
+
+                .p-menuitem-text {
+                    color: inherit;
+                    font-weight: inherit;
+                }
+            }
+
+            &.p-highlight .p-menuitem-link {
+                background: $highlightBg;
+                color: $highlightTextColor;
+                border-bottom-color: var(--tabs-active-indicator);
+                font-weight: 600;
+
+                &:hover {
+                    background: $highlightBg;
+                    color: $highlightTextColor;
+                }
+            }
+
+            &.p-disabled .p-menuitem-link {
+                color: var(--tabs-disabled-color);
+                cursor: not-allowed;
+                opacity: 0.6;
+
+                &:hover {
+                    background: transparent;
+                    color: var(--tabs-disabled-color);
+                }
+            }
+
+            &:first-child .p-menuitem-link {
+                border-radius: 8px 0 0 8px;
+            }
+
+            &:last-child .p-menuitem-link {
+                border-radius: 0 8px 8px 0;
+            }
+        }
+    }
+}
+
+// Vertical TabView
+.p-tabview.p-tabview-vertical {
+    display: flex;
+
+    .p-tabview-nav {
+        flex-direction: column;
+        border-right: 1px solid var(--tabs-border);
+        border-bottom: none;
+        border-radius: 8px 0 0 8px;
+        min-width: 12rem;
+
+        .p-tabview-nav-link {
+            border-bottom: none;
+            border-right: 3px solid transparent;
+            justify-content: flex-start;
+
+            &.p-highlight {
+                border-right-color: var(--tabs-active-indicator);
+                border-bottom: none;
+            }
+        }
+
+        .p-tabview-nav-link:first-child {
+            border-radius: 8px 0 0 0;
+        }
+
+        .p-tabview-nav-link:last-child {
+            border-radius: 0 0 0 8px;
+        }
+    }
+
+    .p-tabview-panels {
+        border-left: none;
+        border-radius: 0 8px 8px 0;
+        flex: 1;
+    }
+}
+
+// Tab close button
+.p-tabview-close {
+    background: transparent;
+    color: var(--tabs-text-color);
+    border: none;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.7;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--tabs-active-text-color);
+        opacity: 1;
+    }
+
+    .p-highlight & {
+        color: $highlightTextColor;
+    }
+}
+
+// Custom tab variants
+.p-tabview.p-tabview-top {
+    .p-tabview-nav .p-tabview-nav-link {
+        border-bottom: 3px solid transparent;
+        border-top: none;
+
+        &.p-highlight {
+            border-bottom-color: var(--tabs-active-indicator);
+        }
+    }
+}
+
+.p-tabview.p-tabview-bottom {
+    flex-direction: column-reverse;
+
+    .p-tabview-nav {
+        border-top: 1px solid var(--tabs-border);
+        border-bottom: none;
+        border-radius: 0 0 8px 8px;
+
+        .p-tabview-nav-link {
+            border-top: 3px solid transparent;
+            border-bottom: none;
+
+            &.p-highlight {
+                border-top-color: var(--tabs-active-indicator);
+            }
+        }
+    }
+
+    .p-tabview-panels {
+        border-bottom: none;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+.p-tabview.p-tabview-left {
+    .p-tabview-nav {
+        border-right: 1px solid var(--tabs-border);
+        border-bottom: none;
+
+        .p-tabview-nav-link {
+            border-right: 3px solid transparent;
+            border-bottom: none;
+
+            &.p-highlight {
+                border-right-color: var(--tabs-active-indicator);
+            }
+        }
+    }
+}
+
+.p-tabview.p-tabview-right {
+    flex-direction: row-reverse;
+
+    .p-tabview-nav {
+        border-left: 1px solid var(--tabs-border);
+        border-right: none;
+        border-radius: 0 8px 8px 0;
+
+        .p-tabview-nav-link {
+            border-left: 3px solid transparent;
+            border-right: none;
+
+            &.p-highlight {
+                border-left-color: var(--tabs-active-indicator);
+            }
+        }
+    }
+
+    .p-tabview-panels {
+        border-right: none;
+        border-radius: 8px 0 0 8px;
+    }
+}
+
+//*------------------------------ Tabs ------------------------------*//
+
+
+
+//*------------------------------ Dialog ------------------------------*//
+.p-dialog {
+    background: var(--dialog-bg);
+    color: var(--dialog-text-color);
+    border: 1px solid var(--dialog-border);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+    // Dialog Header
+    .p-dialog-header {
+        background: var(--dialog-header-bg);
+        color: var(--dialog-header-text-color);
+        border-bottom: 1px solid var(--dialog-border);
+        border-radius: 8px 8px 0 0;
+        padding: 1rem 1.5rem;
+
+        .p-dialog-title {
+            color: var(--dialog-header-text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .p-dialog-header-icons {
+            .p-dialog-header-icon {
+                background: transparent;
+                color: var(--dialog-header-text-color);
+                border: 1px solid transparent;
+                border-radius: 4px;
+                width: 2rem;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s;
+                margin-left: 0.5rem;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: #ffffff;
+                }
+
+                &:focus {
+                    border-color: rgba(255, 255, 255, 0.3);
+                    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
+
+    // Dialog Content
+    .p-dialog-content {
+        background: var(--dialog-content-bg);
+        color: var(--dialog-text-color);
+        padding: 1.5rem;
+        border: none;
+    }
+
+    // Dialog Footer
+    .p-dialog-footer {
+        background: var(--dialog-footer-bg);
+        border-top: 1px solid var(--dialog-border);
+        border-radius: 0 0 8px 8px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.5rem;
+
+        .p-button {
+            margin: 0;
+        }
+    }
+}
+
+// Dialog Mask/Overlay
+.p-dialog-mask {
+    background: var(--dialog-mask-bg);
+    backdrop-filter: blur(2px);
+}
+
+// Maximized Dialog
+.p-dialog.p-dialog-maximized {
+    border-radius: 0;
+    
+    .p-dialog-header {
+        border-radius: 0;
+    }
+    
+    .p-dialog-footer {
+        border-radius: 0;
+    }
+}
+
+// Dialog without Header
+.p-dialog:not(:has(.p-dialog-header)) {
+    .p-dialog-content {
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+// Dialog without Footer
+.p-dialog:not(:has(.p-dialog-footer)) {
+    .p-dialog-content {
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+// Dialog with only Content
+.p-dialog:not(:has(.p-dialog-header)):not(:has(.p-dialog-footer)) {
+    .p-dialog-content {
+        border-radius: 8px;
+    }
+}
+//*------------------------------ Dialog ------------------------------*//
 
 
