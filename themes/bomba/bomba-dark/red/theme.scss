@@ -8,13 +8,6 @@ $highlightBg: #1a0f0f !default;
 $highlightTextColor: #d0d0d0 !default;
 $highlightFocusBg: rgba($primaryColor, 0.24) !default;
 
-// Surface colors for dark backgrounds
-$surface0: #0f0f0f !default; // Darkest - main backgrounds
-$surface50: #1a1a1a !default; // Cards, panels
-$surface100: #2a2a2a !default; // Elevated surfaces
-$surface200: #3a3a3a !default; // Higher elevation
-$surface300: #4a4a4a !default; // Interactive elements
-
 // Text colors
 $textColor: #e0e0e0 !default; // Primary text
 $textColorSecondary: #b0b0b0 !default; // Secondary text
@@ -30,6 +23,19 @@ $customTextColor: #fff !default;
 
 $customCardColorOne: #334155 !default;
 
+// DataTable Dark Mode Colors
+$datatableBg: #1e293b !default;
+$datatableHeaderBg: #334155 !default;
+$datatableRowBg: #1e293b !default;
+$datatableRowHoverBg: #2d3748 !default;
+$datatableRowAltBg: #262f3d !default;
+$datatableBorderColor: #3a3a3a !default;
+$datatableTextColor: #e0e0e0 !default;
+$datatableHeaderTextColor: #ffffff !default;
+$datatablePaginationBg: #334155 !default;
+$datatablePaginationTextColor: #e0e0e0 !default;
+$datatablePaginationHoverBg: #475569 !default;
+
 // Imports
 @import "../_variables";
 @import "./_fonts";
@@ -41,4 +47,150 @@ $customCardColorOne: #334155 !default;
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
     --custom-card-color-one: #{$customCardColorOne};
+    
+    // DataTable CSS Variables
+    --datatable-bg: #{$datatableBg};
+    --datatable-header-bg: #{$datatableHeaderBg};
+    --datatable-row-bg: #{$datatableRowBg};
+    --datatable-row-hover-bg: #{$datatableRowHoverBg};
+    --datatable-row-alt-bg: #{$datatableRowAltBg};
+    --datatable-border-color: #{$datatableBorderColor};
+    --datatable-text-color: #{$datatableTextColor};
+    --datatable-header-text-color: #{$datatableHeaderTextColor};
+    --datatable-pagination-bg: #{$datatablePaginationBg};
+    --datatable-pagination-text-color: #{$datatablePaginationTextColor};
+    --datatable-pagination-hover-bg: #{$datatablePaginationHoverBg};
+}
+
+// DataTable Dark Mode Styles
+.p-datatable {
+    background: var(--datatable-bg);
+    color: var(--datatable-text-color);
+    border: 2px solid var(--datatable-border-color);
+    border-radius: 8px;
+    overflow: hidden;
+
+    // Table wrapper border
+    .p-datatable-wrapper {
+        border: 1px solid var(--datatable-border-color);
+    }
+
+    // Header section
+    .p-datatable-header {
+        background: var(--datatable-header-bg);
+        color: var(--datatable-header-text-color);
+        border-bottom: 2px solid var(--datatable-border-color);
+        border-left: none;
+        border-right: none;
+        border-top: none;
+    }
+
+    // Column headers
+    .p-datatable-thead > tr > th {
+        background: var(--datatable-header-bg);
+        color: var(--datatable-header-text-color);
+        border-bottom: 2px solid var(--datatable-border-color);
+        border-right: 1px solid var(--datatable-border-color);
+        border-top: none;
+        border-left: none;
+        
+        &:first-child {
+            border-left: none;
+        }
+        
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    // Table body rows
+    .p-datatable-tbody > tr {
+        background: var(--datatable-row-bg);
+        color: var(--datatable-text-color);
+        border-bottom: 1px solid var(--datatable-border-color);
+        border-left: none;
+        border-right: none;
+        border-top: none;
+
+        &:nth-child(even) {
+            background: var(--datatable-row-alt-bg);
+        }
+
+        &:hover {
+            background: var(--datatable-row-hover-bg) !important;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        // Table cells
+        > td {
+            border-right: 1px solid var(--datatable-border-color);
+            border-bottom: none;
+            border-top: none;
+            border-left: none;
+            
+            &:first-child {
+                border-left: none;
+            }
+            
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    // Footer section
+    .p-datatable-footer {
+        background: var(--datatable-header-bg);
+        color: var(--datatable-header-text-color);
+        border-top: 2px solid var(--datatable-border-color);
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    // Table element itself
+    .p-datatable-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border: none;
+    }
+}
+
+// Paginator Dark Mode
+.p-paginator {
+    background: var(--datatable-pagination-bg);
+    color: var(--datatable-pagination-text-color);
+    border: 1px solid var(--datatable-border-color);
+
+    .p-paginator-page,
+    .p-paginator-next,
+    .p-paginator-prev,
+    .p-paginator-first,
+    .p-paginator-last {
+        background: transparent;
+        color: var(--datatable-pagination-text-color);
+        border: 1px solid var(--datatable-border-color);
+
+        &:hover {
+            background: var(--datatable-pagination-hover-bg);
+        }
+
+        &.p-highlight {
+            background: $primaryColor;
+            color: $primaryTextColor;
+        }
+    }
+
+    .p-dropdown {
+        background: var(--datatable-pagination-bg);
+        color: var(--datatable-pagination-text-color);
+        border: 1px solid var(--datatable-border-color);
+
+        &:hover {
+            border-color: $primaryColor;
+        }
+    }
 }
