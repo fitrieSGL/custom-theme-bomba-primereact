@@ -52,9 +52,15 @@ $datatablePaginationHoverBg: #475569 !default;
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
 
+    // Card
     --custom-card-color-one: #{$customCardColorOne};
     --custom-card-border: #{$customCardBorder};
-    
+
+    // Text
+    --text-color: #{$textColor};
+    --text-color-secondary: #{$textColorSecondary};
+    --text-color-muted: #{$textColorMuted};
+
     // DataTable CSS Variables
     --datatable-bg: #{$datatableBg};
     --datatable-header-bg: #{$datatableHeaderBg};
@@ -93,25 +99,25 @@ $datatablePaginationHoverBg: #475569 !default;
     }
 
     // Column headers
-    .p-datatable-thead > tr > th {
+    .p-datatable-thead>tr>th {
         background: var(--datatable-header-bg);
         color: var(--datatable-header-text-color);
         border-bottom: 2px solid var(--datatable-border-color);
         border-right: 1px solid var(--datatable-border-color);
         border-top: none;
         border-left: none;
-        
+
         &:first-child {
             border-left: none;
         }
-        
+
         &:last-child {
             border-right: none;
         }
     }
 
     // Table body rows
-    .p-datatable-tbody > tr {
+    .p-datatable-tbody>tr {
         background: var(--datatable-row-bg);
         color: var(--datatable-text-color);
         border-bottom: 1px solid var(--datatable-border-color);
@@ -132,16 +138,16 @@ $datatablePaginationHoverBg: #475569 !default;
         }
 
         // Table cells
-        > td {
+        >td {
             border-right: 1px solid var(--datatable-border-color);
             border-bottom: none;
             border-top: none;
             border-left: none;
-            
+
             &:first-child {
                 border-left: none;
             }
-            
+
             &:last-child {
                 border-right: none;
             }
