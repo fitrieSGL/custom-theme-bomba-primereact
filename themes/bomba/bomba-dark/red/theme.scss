@@ -80,6 +80,15 @@ $fileuploadProgressValueBg: #22c55e !default;
 $fileuploadFileBg: #334155 !default;
 $fileuploadFileHoverBg: #475569 !default;
 
+// Fieldset
+$fieldsetBg: #1e293b !default;
+$fieldsetHeaderBg: #334155 !default;
+$fieldsetContentBg: #1e293b !default;
+$fieldsetBorder: #{$borderColor} !default;
+$fieldsetTextColor: #e0e0e0 !default;
+$fieldsetLegendColor: #ffffff !default;
+$fieldsetToggleColor: #e0e0e0 !default;
+$fieldsetToggleHoverColor: #e74c3c !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -158,6 +167,16 @@ $fileuploadFileHoverBg: #475569 !default;
     --fileupload-progress-value-bg: #{$fileuploadProgressValueBg};
     --fileupload-file-bg: #{$fileuploadFileBg};
     --fileupload-file-hover-bg: #{$fileuploadFileHoverBg};
+
+    // Fieldset
+    --fieldset-bg: #{$fieldsetBg};
+    --fieldset-header-bg: #{$fieldsetHeaderBg};
+    --fieldset-content-bg: #{$fieldsetContentBg};
+    --fieldset-border: #{$fieldsetBorder};
+    --fieldset-text-color: #{$fieldsetTextColor};
+    --fieldset-legend-color: #{$fieldsetLegendColor};
+    --fieldset-toggle-color: #{$fieldsetToggleColor};
+    --fieldset-toggle-hover-color: #{$fieldsetToggleHoverColor};
 }
 
 
@@ -1406,3 +1425,231 @@ $fileuploadFileHoverBg: #475569 !default;
     }
 }
 //*------------------------------ File Upload ------------------------------*//
+
+
+//*------------------------------ Fieldset ------------------------------*//
+.p-fieldset {
+    background: var(--fieldset-bg);
+    border: 1px solid var(--fieldset-border);
+    border-radius: 8px;
+    color: var(--fieldset-text-color);
+    margin-bottom: 1rem;
+
+    // Fieldset Legend/Header
+    .p-fieldset-legend {
+        background: var(--fieldset-header-bg);
+        color: var(--fieldset-legend-color);
+        border: 1px solid var(--fieldset-border);
+        border-radius: 8px 8px 0 0;
+        padding: 1rem 1.25rem;
+        margin: 0;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.2s;
+        cursor: default;
+
+        // Toggleable fieldset legend
+        &.p-fieldset-toggleable {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+
+            &:hover {
+                background: var(--fieldset-toggle-hover-color);
+                color: #ffffff;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+            }
+
+            // Toggle icon
+            .p-fieldset-toggler {
+                color: var(--fieldset-toggle-color);
+                font-size: 0.875rem;
+                transition: all 0.2s;
+                margin-left: 0.5rem;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+
+            &:hover .p-fieldset-toggler {
+                color: #ffffff;
+            }
+        }
+
+        // Legend text
+        .p-fieldset-legend-text {
+            flex: 1;
+        }
+    }
+
+    // Fieldset Content
+    .p-fieldset-content {
+        background: var(--fieldset-content-bg);
+        color: var(--fieldset-text-color);
+        padding: 1.5rem;
+        border-radius: 0 0 8px 8px;
+        border-top: none;
+
+        // Animation for toggle
+        &.p-fieldset-content-wrapper {
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+    }
+
+    // Collapsed state
+    &.p-fieldset-collapsed {
+        .p-fieldset-legend {
+            border-radius: 8px;
+            border-bottom: 1px solid var(--fieldset-border);
+        }
+
+        .p-fieldset-content {
+            display: none;
+        }
+    }
+
+    // Non-toggleable fieldset
+    &:not(.p-fieldset-toggleable) {
+        .p-fieldset-legend {
+            cursor: default;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+
+    // Fieldset without legend
+    &.p-fieldset-no-legend {
+        .p-fieldset-content {
+            border-radius: 8px;
+            border: 1px solid var(--fieldset-border);
+        }
+    }
+
+    // Nested fieldsets
+    .p-fieldset {
+        margin-bottom: 1rem;
+        border-color: rgba(var(--fieldset-border), 0.7);
+
+        .p-fieldset-legend {
+            background: rgba(var(--fieldset-header-bg), 0.8);
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .p-fieldset-content {
+            padding: 1rem;
+        }
+    }
+}
+
+// Alternative fieldset styling (flat design)
+.p-fieldset.p-fieldset-flat {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    .p-fieldset-legend {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--fieldset-border);
+        border-radius: 0;
+        padding: 0.75rem 0;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--fieldset-legend-color);
+
+        &.p-fieldset-toggleable:hover {
+            background: transparent;
+            border-bottom-color: var(--fieldset-toggle-hover-color);
+            color: var(--fieldset-toggle-hover-color);
+        }
+    }
+
+    .p-fieldset-content {
+        background: transparent;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+    }
+}
+
+// Fieldset with icons in legend
+.p-fieldset-legend-icon {
+    margin-right: 0.5rem;
+    color: var(--fieldset-toggle-color);
+    transition: color 0.2s;
+
+    .p-fieldset-toggleable:hover & {
+        color: #ffffff;
+    }
+}
+
+// Custom fieldset variants
+.p-fieldset.p-fieldset-primary {
+    border-color: $primaryColor;
+
+    .p-fieldset-legend {
+        background: $primaryColor;
+        color: #ffffff;
+        border-color: $primaryColor;
+
+        &.p-fieldset-toggleable:hover {
+            background: darken($primaryColor, 10%);
+        }
+    }
+}
+
+.p-fieldset.p-fieldset-success {
+    border-color: #22c55e;
+
+    .p-fieldset-legend {
+        background: #22c55e;
+        color: #ffffff;
+        border-color: #22c55e;
+
+        &.p-fieldset-toggleable:hover {
+            background: #16a34a;
+        }
+    }
+}
+
+.p-fieldset.p-fieldset-warning {
+    border-color: #f59e0b;
+
+    .p-fieldset-legend {
+        background: #f59e0b;
+        color: #ffffff;
+        border-color: #f59e0b;
+
+        &.p-fieldset-toggleable:hover {
+            background: #d97706;
+        }
+    }
+}
+
+.p-fieldset.p-fieldset-danger {
+    border-color: #dc3545;
+
+    .p-fieldset-legend {
+        background: #dc3545;
+        color: #ffffff;
+        border-color: #dc3545;
+
+        &.p-fieldset-toggleable:hover {
+            background: #c82333;
+        }
+    }
+}
+//*------------------------------ Fieldset ------------------------------*//
+
+
