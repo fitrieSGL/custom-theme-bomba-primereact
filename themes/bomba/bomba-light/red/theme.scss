@@ -15,6 +15,7 @@ $customBg: #f8fafc !default;
 $customTextColor: #000 !default;
 
 $customCardColorOne: #f1f5f9 !default;
+$customCardBorder: #d1d5db !default;
 
 $borderColor: #d1d5db !default;
 //*-------------------------- Custom colors --------------------------*//
@@ -29,7 +30,9 @@ $borderColor: #d1d5db !default;
     --custom-navbar-color: #{$customNavbarColor};
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
+
     --custom-card-color-one: #{$customCardColorOne};
+    --custom-card-border: #{$customCardBorder};
 
     --border-color: #{$borderColor};
 }

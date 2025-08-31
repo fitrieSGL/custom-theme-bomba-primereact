@@ -22,6 +22,7 @@ $customBg: #0f172a !default;
 $customTextColor: #fff !default;
 
 $customCardColorOne: #334155 !default;
+$customCardBorder: #3a3a3a !default;
 
 $borderColor: #3a3a3a !default;
 
@@ -50,7 +51,9 @@ $datatablePaginationHoverBg: #475569 !default;
     --custom-navbar-color: #{$customNavbarColor};
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
+
     --custom-card-color-one: #{$customCardColorOne};
+    --custom-card-border: #{$customCardBorder};
     
     // DataTable CSS Variables
     --datatable-bg: #{$datatableBg};
