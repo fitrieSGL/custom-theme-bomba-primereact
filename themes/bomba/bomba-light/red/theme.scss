@@ -8,12 +8,16 @@ $highlightBg: #fef2f2 !default;
 $highlightTextColor: $primaryDarkerColor !default;
 $highlightFocusBg: rgba($primaryColor, 0.24) !default;
 
-// Custom colors
+
+//*-------------------------- Custom colors --------------------------*//
 $customNavbarColor: #7F1D29 !default;
 $customBg: #f8fafc !default;
 $customTextColor: #000 !default;
 
 $customCardColorOne: #f1f5f9 !default;
+
+$borderColor: #d1d5db !default;
+//*-------------------------- Custom colors --------------------------*//
 
 
 @import "../_variables";
@@ -26,4 +30,6 @@ $customCardColorOne: #f1f5f9 !default;
     --custom-bg: #{$customBg};
     --custom-text-color: #{$customTextColor};
     --custom-card-color-one: #{$customCardColorOne};
+
+    --border-color: #{$borderColor};
 }

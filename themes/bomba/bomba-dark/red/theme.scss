@@ -13,9 +13,9 @@ $textColor: #e0e0e0 !default; // Primary text
 $textColorSecondary: #b0b0b0 !default; // Secondary text
 $textColorMuted: #888888 !default; // Muted text
 
-// Border colors
-$borderColor: #3a3a3a !default;
 
+
+//*-------------------------- Custom colors --------------------------*//
 // Custom colors
 $customNavbarColor: #5a141d !default;
 $customBg: #0f172a !default;
@@ -23,18 +23,22 @@ $customTextColor: #fff !default;
 
 $customCardColorOne: #334155 !default;
 
+$borderColor: #3a3a3a !default;
+
 // DataTable Dark Mode Colors
 $datatableBg: #1e293b !default;
 $datatableHeaderBg: #334155 !default;
 $datatableRowBg: #1e293b !default;
 $datatableRowHoverBg: #2d3748 !default;
 $datatableRowAltBg: #262f3d !default;
-$datatableBorderColor: #3a3a3a !default;
 $datatableTextColor: #e0e0e0 !default;
 $datatableHeaderTextColor: #ffffff !default;
 $datatablePaginationBg: #334155 !default;
 $datatablePaginationTextColor: #e0e0e0 !default;
 $datatablePaginationHoverBg: #475569 !default;
+//*-------------------------- Custom colors --------------------------*//
+
+
 
 // Imports
 @import "../_variables";
@@ -54,7 +58,7 @@ $datatablePaginationHoverBg: #475569 !default;
     --datatable-row-bg: #{$datatableRowBg};
     --datatable-row-hover-bg: #{$datatableRowHoverBg};
     --datatable-row-alt-bg: #{$datatableRowAltBg};
-    --datatable-border-color: #{$datatableBorderColor};
+    --datatable-border-color: #{$borderColor};
     --datatable-text-color: #{$datatableTextColor};
     --datatable-header-text-color: #{$datatableHeaderTextColor};
     --datatable-pagination-bg: #{$datatablePaginationBg};
