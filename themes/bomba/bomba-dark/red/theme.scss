@@ -37,6 +37,18 @@ $datatableHeaderTextColor: #ffffff !default;
 $datatablePaginationBg: #334155 !default;
 $datatablePaginationTextColor: #e0e0e0 !default;
 $datatablePaginationHoverBg: #475569 !default;
+
+// Input Components Dark Mode
+$inputBg: #1e293b !default;
+$inputTextColor: #e0e0e0 !default;
+$inputBorder: #3a3a3a !default;
+$inputHoverBorder: #475569 !default;
+$inputFocusBorder: #e74c3c !default;
+$inputPlaceholderColor: #888888 !default;
+
+// Skeloton
+$skeletonBg: #334155 !default;
+$skeletonAnimationBg: #475569 !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -73,9 +85,22 @@ $datatablePaginationHoverBg: #475569 !default;
     --datatable-pagination-bg: #{$datatablePaginationBg};
     --datatable-pagination-text-color: #{$datatablePaginationTextColor};
     --datatable-pagination-hover-bg: #{$datatablePaginationHoverBg};
+
+    // Input CSS Variables
+    --input-bg: #{$inputBg};
+    --input-text-color: #{$inputTextColor};
+    --input-border: #{$inputBorder};
+    --input-hover-border: #{$inputHoverBorder};
+    --input-focus-border: #{$inputFocusBorder};
+    --input-placeholder-color: #{$inputPlaceholderColor};
+
+    // Skeleton
+    --skeleton-bg: #{$skeletonBg};
+    --skeleton-animation-bg: #{$skeletonAnimationBg};
 }
 
-// DataTable Dark Mode Styles
+
+//*------------------------------ DataTable ------------------------------*//
 .p-datatable {
     background: var(--datatable-bg);
     color: var(--datatable-text-color);
@@ -206,4 +231,498 @@ $datatablePaginationHoverBg: #475569 !default;
             border-color: $primaryColor;
         }
     }
+
+    //*------------------------------ DataTable ------------------------------*//
+
+
+
+    //*------------------------------ Input ------------------------------*//
+    .p-inputtext {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+
+        &::placeholder {
+            color: var(--input-placeholder-color);
+        }
+
+        &:hover {
+            border-color: var(--input-hover-border);
+        }
+
+        &:focus {
+            border-color: var(--input-focus-border);
+            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+        }
+
+        &:disabled {
+            background: #2a3441;
+            color: #666;
+            border-color: #444;
+        }
+    }
+
+    // Textarea Dark Mode
+    .p-inputtextarea {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+
+        &::placeholder {
+            color: var(--input-placeholder-color);
+        }
+
+        &:hover {
+            border-color: var(--input-hover-border);
+        }
+
+        &:focus {
+            border-color: var(--input-focus-border);
+            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+        }
+
+        &:disabled {
+            background: #2a3441;
+            color: #666;
+            border-color: #444;
+        }
+    }
+
+    // Dropdown Dark Mode
+    .p-dropdown {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+
+        &:hover {
+            border-color: var(--input-hover-border);
+        }
+
+        &:focus {
+            border-color: var(--input-focus-border);
+            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+        }
+
+        .p-dropdown-label {
+            color: var(--input-text-color);
+
+            &.p-placeholder {
+                color: var(--input-placeholder-color);
+            }
+        }
+
+        .p-dropdown-trigger {
+            color: var(--input-text-color);
+        }
+
+        &.p-dropdown-clearable .p-dropdown-clear-icon {
+            color: var(--input-text-color);
+        }
+    }
+
+    // Dropdown Panel Dark Mode
+    .p-dropdown-panel {
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        .p-dropdown-items {
+            .p-dropdown-item {
+                color: var(--input-text-color);
+                background: transparent;
+
+                &:hover {
+                    background: var(--input-hover-border);
+                }
+
+                &.p-highlight {
+                    background: $primaryColor;
+                    color: $primaryTextColor;
+                }
+
+                &:focus {
+                    background: var(--input-hover-border);
+                }
+            }
+        }
+
+        .p-dropdown-filter {
+            background: var(--input-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
+
+            &::placeholder {
+                color: var(--input-placeholder-color);
+            }
+
+            &:focus {
+                border-color: var(--input-focus-border);
+            }
+        }
+
+        .p-dropdown-empty-message {
+            color: var(--input-placeholder-color);
+        }
+    }
+
+    // MultiSelect Dark Mode
+    .p-multiselect {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+
+        &:hover {
+            border-color: var(--input-hover-border);
+        }
+
+        &:focus {
+            border-color: var(--input-focus-border);
+            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+        }
+
+        .p-multiselect-label {
+            color: var(--input-text-color);
+
+            &.p-placeholder {
+                color: var(--input-placeholder-color);
+            }
+        }
+
+        .p-multiselect-trigger {
+            color: var(--input-text-color);
+        }
+
+        .p-multiselect-token {
+            background: $primaryColor;
+            color: $primaryTextColor;
+            border-radius: 4px;
+
+            .p-multiselect-token-icon {
+                color: $primaryTextColor;
+            }
+        }
+    }
+
+    // MultiSelect Panel Dark Mode
+    .p-multiselect-panel {
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        .p-multiselect-items {
+            .p-multiselect-item {
+                color: var(--input-text-color);
+                background: transparent;
+
+                &:hover {
+                    background: var(--input-hover-border);
+                }
+
+                &.p-highlight {
+                    background: $primaryColor;
+                    color: $primaryTextColor;
+                }
+            }
+        }
+
+        .p-multiselect-filter-container {
+            .p-multiselect-filter {
+                background: var(--input-bg);
+                color: var(--input-text-color);
+                border: 1px solid var(--input-border);
+
+                &::placeholder {
+                    color: var(--input-placeholder-color);
+                }
+            }
+        }
+
+        .p-multiselect-header {
+            background: var(--datatable-header-bg);
+            border-bottom: 1px solid var(--input-border);
+
+            .p-multiselect-close {
+                color: var(--input-text-color);
+            }
+        }
+    }
+
+    // Calendar/DatePicker Dark Mode
+    .p-calendar {
+        .p-inputtext {
+            background: var(--input-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
+        }
+    }
+
+    .p-datepicker {
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        .p-datepicker-header {
+            background: var(--datatable-header-bg);
+            color: var(--input-text-color);
+            border-bottom: 1px solid var(--input-border);
+        }
+
+        .p-datepicker-calendar {
+            td {
+                >span {
+                    color: var(--input-text-color);
+
+                    &:hover {
+                        background: var(--input-hover-border);
+                    }
+
+                    &.p-highlight {
+                        background: $primaryColor;
+                        color: $primaryTextColor;
+                    }
+                }
+            }
+
+            .p-datepicker-other-month {
+                color: var(--input-placeholder-color);
+            }
+        }
+
+        .p-monthpicker {
+            .p-monthpicker-month {
+                color: var(--input-text-color);
+
+                &:hover {
+                    background: var(--input-hover-border);
+                }
+
+                &.p-highlight {
+                    background: $primaryColor;
+                    color: $primaryTextColor;
+                }
+            }
+        }
+    }
+
+    // AutoComplete Dark Mode
+    .p-autocomplete {
+        .p-autocomplete-input {
+            background: var(--input-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
+
+            &::placeholder {
+                color: var(--input-placeholder-color);
+            }
+        }
+
+        .p-autocomplete-dropdown {
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-left: none;
+        }
+    }
+
+    .p-autocomplete-panel {
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        .p-autocomplete-items {
+            .p-autocomplete-item {
+                color: var(--input-text-color);
+
+                &:hover {
+                    background: var(--input-hover-border);
+                }
+
+                &.p-highlight {
+                    background: $primaryColor;
+                    color: $primaryTextColor;
+                }
+            }
+        }
+    }
+
+    // InputNumber Dark Mode
+    .p-inputnumber {
+        .p-inputnumber-input {
+            background: var(--input-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
+        }
+
+        .p-inputnumber-button-group {
+            .p-inputnumber-button {
+                background: var(--datatable-header-bg);
+                color: var(--input-text-color);
+                border: 1px solid var(--input-border);
+
+                &:hover {
+                    background: var(--input-hover-border);
+                }
+            }
+        }
+    }
+
+    // Password Dark Mode
+    .p-password {
+        .p-password-input {
+            background: var(--input-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
+
+            &::placeholder {
+                color: var(--input-placeholder-color);
+            }
+        }
+    }
+
+    .p-password-panel {
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        .p-password-meter {
+            .p-password-strength {
+                &.weak {
+                    background: #dc3545;
+                }
+
+                &.medium {
+                    background: #ffc107;
+                }
+
+                &.strong {
+                    background: #28a745;
+                }
+            }
+        }
+    }
+
+    //*------------------------------ Input ------------------------------*//
+
+
+    //*------------------------------ Skeleton ------------------------------*//
+    .p-skeleton {
+        background: var(--skeleton-bg);
+        border-radius: 6px;
+
+        // Override the default animation
+        &::after {
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--skeleton-animation-bg),
+                    transparent);
+            animation: p-skeleton-animation 1.2s ease-in-out infinite;
+        }
+
+        // Different skeleton shapes
+        &.p-skeleton-circle {
+            border-radius: 50%;
+        }
+
+        &.p-skeleton-none {
+            border-radius: 0;
+        }
+    }
+
+    // Custom skeleton animation for dark mode
+    @keyframes p-skeleton-animation {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    // Skeleton in different contexts (optional variations)
+    .p-card .p-skeleton {
+        background: rgba(var(--skeleton-bg), 0.6);
+    }
+
+    .p-datatable .p-skeleton {
+        background: var(--skeleton-bg);
+        margin: 2px 0;
+    }
+
+    // Skeleton text variations
+    .p-skeleton.p-skeleton-text {
+        height: 1rem;
+
+        &.p-skeleton-sm {
+            height: 0.875rem;
+        }
+
+        &.p-skeleton-lg {
+            height: 1.25rem;
+        }
+
+        &.p-skeleton-xl {
+            height: 1.5rem;
+        }
+    }
+
+    // Skeleton for specific component contexts
+    .p-skeleton-list {
+        .p-skeleton {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Avatar skeleton
+    .p-skeleton.p-skeleton-avatar {
+        width: 2rem;
+        height: 2rem;
+
+        &.p-skeleton-avatar-sm {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &.p-skeleton-avatar-lg {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &.p-skeleton-avatar-xl {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    // Button skeleton
+    .p-skeleton.p-skeleton-button {
+        height: 2.5rem;
+        border-radius: 6px;
+
+        &.p-skeleton-button-sm {
+            height: 2rem;
+        }
+
+        &.p-skeleton-button-lg {
+            height: 3rem;
+        }
+    }
+
+    //*------------------------------ Skeleton ------------------------------*//
 }
