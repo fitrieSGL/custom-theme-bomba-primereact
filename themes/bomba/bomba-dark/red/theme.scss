@@ -46,9 +46,40 @@ $inputHoverBorder: #475569 !default;
 $inputFocusBorder: #e74c3c !default;
 $inputPlaceholderColor: #888888 !default;
 
-// Skeloton
+// Skeleton
 $skeletonBg: #334155 !default;
 $skeletonAnimationBg: #475569 !default;
+
+// Stepper
+$stepperBg: #1e293b !default;
+$stepperHeaderBg: #334155 !default;
+$stepperActiveHeaderBg: #e74c3c !default;
+$stepperCompletedHeaderBg: #22c55e !default;
+$stepperContentBg: #1e293b !default;
+$stepperBorder: #3a3a3a !default;
+$stepperTextColor: #e0e0e0 !default;
+$stepperActiveTextColor: #ffffff !default;
+$stepperNumberBg: #475569 !default;
+$stepperActiveNumberBg: #e74c3c !default;
+$stepperCompletedNumberBg: #22c55e !default;
+$stepperConnectorColor: #3a3a3a !default;
+$stepperActiveConnectorColor: #e74c3c !default;
+
+// FileUpload
+$fileuploadBg: #1e293b !default;
+$fileuploadHeaderBg: #334155 !default;
+$fileuploadContentBg: #1e293b !default;
+$fileuploadBorder: #{$borderColor} !default;
+$fileuploadDragBorder: #e74c3c !default;
+$fileuploadDragBg: rgba(231, 76, 60, 0.1) !default;
+$fileuploadTextColor: #e0e0e0 !default;
+$fileuploadButtonBg: #e74c3c !default;
+$fileuploadButtonHoverBg: #c0392b !default;
+$fileuploadProgressBg: #475569 !default;
+$fileuploadProgressValueBg: #22c55e !default;
+$fileuploadFileBg: #334155 !default;
+$fileuploadFileHoverBg: #475569 !default;
+
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -97,6 +128,36 @@ $skeletonAnimationBg: #475569 !default;
     // Skeleton
     --skeleton-bg: #{$skeletonBg};
     --skeleton-animation-bg: #{$skeletonAnimationBg};
+
+    // Stepper
+    --stepper-bg: #{$stepperBg};
+    --stepper-header-bg: #{$stepperHeaderBg};
+    --stepper-active-header-bg: #{$stepperActiveHeaderBg};
+    --stepper-completed-header-bg: #{$stepperCompletedHeaderBg};
+    --stepper-content-bg: #{$stepperContentBg};
+    --stepper-border: #{$stepperBorder};
+    --stepper-text-color: #{$stepperTextColor};
+    --stepper-active-text-color: #{$stepperActiveTextColor};
+    --stepper-number-bg: #{$stepperNumberBg};
+    --stepper-active-number-bg: #{$stepperActiveNumberBg};
+    --stepper-completed-number-bg: #{$stepperCompletedNumberBg};
+    --stepper-connector-color: #{$stepperConnectorColor};
+    --stepper-active-connector-color: #{$stepperActiveConnectorColor};
+
+    // FileUpload
+    --fileupload-bg: #{$fileuploadBg};
+    --fileupload-header-bg: #{$fileuploadHeaderBg};
+    --fileupload-content-bg: #{$fileuploadContentBg};
+    --fileupload-border: #{$fileuploadBorder};
+    --fileupload-drag-border: #{$fileuploadDragBorder};
+    --fileupload-drag-bg: #{$fileuploadDragBg};
+    --fileupload-text-color: #{$fileuploadTextColor};
+    --fileupload-button-bg: #{$fileuploadButtonBg};
+    --fileupload-button-hover-bg: #{$fileuploadButtonHoverBg};
+    --fileupload-progress-bg: #{$fileuploadProgressBg};
+    --fileupload-progress-value-bg: #{$fileuploadProgressValueBg};
+    --fileupload-file-bg: #{$fileuploadFileBg};
+    --fileupload-file-hover-bg: #{$fileuploadFileHoverBg};
 }
 
 
@@ -231,194 +292,251 @@ $skeletonAnimationBg: #475569 !default;
             border-color: $primaryColor;
         }
     }
+}
+//*------------------------------ DataTable ------------------------------*//
 
-    //*------------------------------ DataTable ------------------------------*//
+//*------------------------------ Input ------------------------------*//
+.p-inputtext {
+    background: var(--input-bg);
+    color: var(--input-text-color);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
 
+    &::placeholder {
+        color: var(--input-placeholder-color);
+    }
 
+    &:hover {
+        border-color: var(--input-hover-border);
+    }
 
-    //*------------------------------ Input ------------------------------*//
-    .p-inputtext {
-        background: var(--input-bg);
+    &:focus {
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+    }
+
+    &:disabled {
+        background: #2a3441;
+        color: #666;
+        border-color: #444;
+    }
+}
+
+// Textarea Dark Mode
+.p-inputtextarea {
+    background: var(--input-bg);
+    color: var(--input-text-color);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+
+    &::placeholder {
+        color: var(--input-placeholder-color);
+    }
+
+    &:hover {
+        border-color: var(--input-hover-border);
+    }
+
+    &:focus {
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+    }
+
+    &:disabled {
+        background: #2a3441;
+        color: #666;
+        border-color: #444;
+    }
+}
+
+// Dropdown Dark Mode
+.p-dropdown {
+    background: var(--input-bg);
+    color: var(--input-text-color);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+
+    &:hover {
+        border-color: var(--input-hover-border);
+    }
+
+    &:focus {
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+    }
+
+    .p-dropdown-label {
         color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
 
-        &::placeholder {
+        &.p-placeholder {
             color: var(--input-placeholder-color);
         }
-
-        &:hover {
-            border-color: var(--input-hover-border);
-        }
-
-        &:focus {
-            border-color: var(--input-focus-border);
-            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-        }
-
-        &:disabled {
-            background: #2a3441;
-            color: #666;
-            border-color: #444;
-        }
     }
 
-    // Textarea Dark Mode
-    .p-inputtextarea {
-        background: var(--input-bg);
+    .p-dropdown-trigger {
         color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-
-        &::placeholder {
-            color: var(--input-placeholder-color);
-        }
-
-        &:hover {
-            border-color: var(--input-hover-border);
-        }
-
-        &:focus {
-            border-color: var(--input-focus-border);
-            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-        }
-
-        &:disabled {
-            background: #2a3441;
-            color: #666;
-            border-color: #444;
-        }
     }
 
-    // Dropdown Dark Mode
-    .p-dropdown {
-        background: var(--input-bg);
+    &.p-dropdown-clearable .p-dropdown-clear-icon {
         color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-
-        &:hover {
-            border-color: var(--input-hover-border);
-        }
-
-        &:focus {
-            border-color: var(--input-focus-border);
-            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-        }
-
-        .p-dropdown-label {
-            color: var(--input-text-color);
-
-            &.p-placeholder {
-                color: var(--input-placeholder-color);
-            }
-        }
-
-        .p-dropdown-trigger {
-            color: var(--input-text-color);
-        }
-
-        &.p-dropdown-clearable .p-dropdown-clear-icon {
-            color: var(--input-text-color);
-        }
     }
+}
 
-    // Dropdown Panel Dark Mode
-    .p-dropdown-panel {
-        background: var(--input-bg);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+// Dropdown Panel Dark Mode
+.p-dropdown-panel {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
-        .p-dropdown-items {
-            .p-dropdown-item {
-                color: var(--input-text-color);
-                background: transparent;
-
-                &:hover {
-                    background: var(--input-hover-border);
-                }
-
-                &.p-highlight {
-                    background: $primaryColor;
-                    color: $primaryTextColor;
-                }
-
-                &:focus {
-                    background: var(--input-hover-border);
-                }
-            }
-        }
-
-        .p-dropdown-filter {
-            background: var(--input-bg);
+    .p-dropdown-items {
+        .p-dropdown-item {
             color: var(--input-text-color);
-            border: 1px solid var(--input-border);
+            background: transparent;
 
-            &::placeholder {
-                color: var(--input-placeholder-color);
+            &:hover {
+                background: var(--input-hover-border);
+            }
+
+            &.p-highlight {
+                background: $primaryColor;
+                color: $primaryTextColor;
             }
 
             &:focus {
-                border-color: var(--input-focus-border);
+                background: var(--input-hover-border);
             }
-        }
-
-        .p-dropdown-empty-message {
-            color: var(--input-placeholder-color);
         }
     }
 
-    // MultiSelect Dark Mode
-    .p-multiselect {
+    .p-dropdown-filter {
         background: var(--input-bg);
         color: var(--input-text-color);
         border: 1px solid var(--input-border);
-        border-radius: 6px;
 
-        &:hover {
-            border-color: var(--input-hover-border);
+        &::placeholder {
+            color: var(--input-placeholder-color);
         }
 
         &:focus {
             border-color: var(--input-focus-border);
-            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
         }
+    }
 
-        .p-multiselect-label {
-            color: var(--input-text-color);
+    .p-dropdown-empty-message {
+        color: var(--input-placeholder-color);
+    }
+}
 
-            &.p-placeholder {
-                color: var(--input-placeholder-color);
-            }
+// MultiSelect Dark Mode
+.p-multiselect {
+    background: var(--input-bg);
+    color: var(--input-text-color);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+
+    &:hover {
+        border-color: var(--input-hover-border);
+    }
+
+    &:focus {
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+    }
+
+    .p-multiselect-label {
+        color: var(--input-text-color);
+
+        &.p-placeholder {
+            color: var(--input-placeholder-color);
         }
+    }
 
-        .p-multiselect-trigger {
-            color: var(--input-text-color);
-        }
+    .p-multiselect-trigger {
+        color: var(--input-text-color);
+    }
 
-        .p-multiselect-token {
-            background: $primaryColor;
+    .p-multiselect-token {
+        background: $primaryColor;
+        color: $primaryTextColor;
+        border-radius: 4px;
+
+        .p-multiselect-token-icon {
             color: $primaryTextColor;
-            border-radius: 4px;
+        }
+    }
+}
 
-            .p-multiselect-token-icon {
+// MultiSelect Panel Dark Mode
+.p-multiselect-panel {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    .p-multiselect-items {
+        .p-multiselect-item {
+            color: var(--input-text-color);
+            background: transparent;
+
+            &:hover {
+                background: var(--input-hover-border);
+            }
+
+            &.p-highlight {
+                background: $primaryColor;
                 color: $primaryTextColor;
             }
         }
     }
 
-    // MultiSelect Panel Dark Mode
-    .p-multiselect-panel {
-        background: var(--input-bg);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    .p-multiselect-filter-container {
+        .p-multiselect-filter {
+            background: var(--input-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
 
-        .p-multiselect-items {
-            .p-multiselect-item {
+            &::placeholder {
+                color: var(--input-placeholder-color);
+            }
+        }
+    }
+
+    .p-multiselect-header {
+        background: var(--datatable-header-bg);
+        border-bottom: 1px solid var(--input-border);
+
+        .p-multiselect-close {
+            color: var(--input-text-color);
+        }
+    }
+}
+
+// Calendar/DatePicker Dark Mode
+.p-calendar {
+    .p-inputtext {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+    }
+}
+
+.p-datepicker {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    .p-datepicker-header {
+        background: var(--datatable-header-bg);
+        color: var(--input-text-color);
+        border-bottom: 1px solid var(--input-border);
+    }
+
+    .p-datepicker-calendar {
+        td {
+            >span {
                 color: var(--input-text-color);
-                background: transparent;
 
                 &:hover {
                     background: var(--input-hover-border);
@@ -431,298 +549,860 @@ $skeletonAnimationBg: #475569 !default;
             }
         }
 
-        .p-multiselect-filter-container {
-            .p-multiselect-filter {
-                background: var(--input-bg);
-                color: var(--input-text-color);
-                border: 1px solid var(--input-border);
+        .p-datepicker-other-month {
+            color: var(--input-placeholder-color);
+        }
+    }
 
-                &::placeholder {
-                    color: var(--input-placeholder-color);
+    .p-monthpicker {
+        .p-monthpicker-month {
+            color: var(--input-text-color);
+
+            &:hover {
+                background: var(--input-hover-border);
+            }
+
+            &.p-highlight {
+                background: $primaryColor;
+                color: $primaryTextColor;
+            }
+        }
+    }
+}
+
+// AutoComplete Dark Mode
+.p-autocomplete {
+    .p-autocomplete-input {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+
+        &::placeholder {
+            color: var(--input-placeholder-color);
+        }
+    }
+
+    .p-autocomplete-dropdown {
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-left: none;
+    }
+}
+
+.p-autocomplete-panel {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    .p-autocomplete-items {
+        .p-autocomplete-item {
+            color: var(--input-text-color);
+
+            &:hover {
+                background: var(--input-hover-border);
+            }
+
+            &.p-highlight {
+                background: $primaryColor;
+                color: $primaryTextColor;
+            }
+        }
+    }
+}
+
+// InputNumber Dark Mode
+.p-inputnumber {
+    .p-inputnumber-input {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+    }
+
+    .p-inputnumber-button-group {
+        .p-inputnumber-button {
+            background: var(--datatable-header-bg);
+            color: var(--input-text-color);
+            border: 1px solid var(--input-border);
+
+            &:hover {
+                background: var(--input-hover-border);
+            }
+        }
+    }
+}
+
+// Password Dark Mode
+.p-password {
+    .p-password-input {
+        background: var(--input-bg);
+        color: var(--input-text-color);
+        border: 1px solid var(--input-border);
+
+        &::placeholder {
+            color: var(--input-placeholder-color);
+        }
+    }
+}
+
+.p-password-panel {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    .p-password-meter {
+        .p-password-strength {
+            &.weak {
+                background: #dc3545;
+            }
+
+            &.medium {
+                background: #ffc107;
+            }
+
+            &.strong {
+                background: #28a745;
+            }
+        }
+    }
+}
+
+//*------------------------------ Input ------------------------------*//
+
+
+//*------------------------------ Skeleton ------------------------------*//
+.p-skeleton {
+    background: var(--skeleton-bg);
+    border-radius: 6px;
+
+    // Override the default animation
+    &::after {
+        background: linear-gradient(90deg,
+                transparent,
+                var(--skeleton-animation-bg),
+                transparent);
+        animation: p-skeleton-animation 1.2s ease-in-out infinite;
+    }
+
+    // Different skeleton shapes
+    &.p-skeleton-circle {
+        border-radius: 50%;
+    }
+
+    &.p-skeleton-none {
+        border-radius: 0;
+    }
+}
+
+// Custom skeleton animation for dark mode
+@keyframes p-skeleton-animation {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+// Skeleton in different contexts (optional variations)
+.p-card .p-skeleton {
+    background: rgba(var(--skeleton-bg), 0.6);
+}
+
+.p-datatable .p-skeleton {
+    background: var(--skeleton-bg);
+    margin: 2px 0;
+}
+
+// Skeleton text variations
+.p-skeleton.p-skeleton-text {
+    height: 1rem;
+
+    &.p-skeleton-sm {
+        height: 0.875rem;
+    }
+
+    &.p-skeleton-lg {
+        height: 1.25rem;
+    }
+
+    &.p-skeleton-xl {
+        height: 1.5rem;
+    }
+}
+
+// Skeleton for specific component contexts
+.p-skeleton-list {
+    .p-skeleton {
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Avatar skeleton
+.p-skeleton.p-skeleton-avatar {
+    width: 2rem;
+    height: 2rem;
+
+    &.p-skeleton-avatar-sm {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &.p-skeleton-avatar-lg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &.p-skeleton-avatar-xl {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+// Button skeleton
+.p-skeleton.p-skeleton-button {
+    height: 2.5rem;
+    border-radius: 6px;
+
+    &.p-skeleton-button-sm {
+        height: 2rem;
+    }
+
+    &.p-skeleton-button-lg {
+        height: 3rem;
+    }
+}
+
+//*------------------------------ Skeleton ------------------------------*//
+
+
+//*------------------------------ Stepper ------------------------------*//
+.p-stepper {
+    background: var(--stepper-bg);
+    color: var(--stepper-text-color);
+    border: 1px solid var(--stepper-border);
+    border-radius: 8px;
+
+    // Stepper Header (Navigation)
+    .p-stepper-nav {
+        background: transparent;
+        border: none;
+        padding: 1rem;
+
+        .p-stepper-header {
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin: 0 0.25rem;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(var(--stepper-header-bg), 0.5);
+            }
+
+            // Step number circle
+            .p-stepper-number {
+                background: var(--stepper-number-bg);
+                color: var(--stepper-text-color);
+                border: 2px solid var(--stepper-border);
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                margin-right: 0.75rem;
+                transition: all 0.2s;
+            }
+
+            // Step title
+            .p-stepper-title {
+                color: var(--stepper-text-color);
+                font-weight: 500;
+                margin: 0;
+                transition: color 0.2s;
+            }
+
+            // Active step
+            &.p-highlight {
+                background: rgba(var(--stepper-active-header-bg), 0.1);
+
+                .p-stepper-number {
+                    background: var(--stepper-active-number-bg);
+                    color: var(--stepper-active-text-color);
+                    border-color: var(--stepper-active-number-bg);
+                    box-shadow: 0 0 0 3px rgba(var(--stepper-active-header-bg), 0.2);
+                }
+
+                .p-stepper-title {
+                    color: var(--stepper-active-text-color);
+                    font-weight: 600;
+                }
+            }
+
+            // Completed step
+            &.p-stepper-header-completed {
+                .p-stepper-number {
+                    background: var(--stepper-completed-number-bg);
+                    color: var(--stepper-active-text-color);
+                    border-color: var(--stepper-completed-number-bg);
+                }
+
+                .p-stepper-title {
+                    color: var(--stepper-text-color);
+                }
+
+                // Checkmark icon for completed steps
+                .p-stepper-number::before {
+                    content: '✓';
+                    font-size: 0.875rem;
+                }
+            }
+
+            // Disabled step
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    // Stepper Content Panels
+    .p-stepper-panels {
+        background: var(--stepper-content-bg);
+        border-top: 1px solid var(--stepper-border);
+        padding: 1.5rem;
+
+        .p-stepper-panel {
+            .p-stepper-content {
+                color: var(--stepper-text-color);
+                padding: 0;
+            }
+        }
+    }
+
+    // Horizontal Stepper Connectors
+    &.p-stepper-horizontal {
+        .p-stepper-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: var(--stepper-connector-color);
+                z-index: 0;
+                transform: translateY(-50%);
+                margin: 0 4rem;
+            }
+
+            .p-stepper-header {
+                position: relative;
+                z-index: 1;
+                background: var(--stepper-bg);
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.p-highlight,
+                &.p-stepper-header-completed {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -2rem;
+                        width: 4rem;
+                        height: 2px;
+                        background: var(--stepper-active-connector-color);
+                        z-index: 0;
+                        transform: translateY(-50%);
+                    }
+
+                    &:first-child::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // Vertical Stepper
+    &.p-stepper-vertical {
+        .p-stepper-nav {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .p-stepper-header {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+                padding-left: 0;
+
+                &:not(:last-child)::after {
+                    content: '';
+                    position: absolute;
+                    left: 1rem;
+                    top: 2.5rem;
+                    width: 2px;
+                    height: 2rem;
+                    background: var(--stepper-connector-color);
+                }
+
+                &.p-highlight::after,
+                &.p-stepper-header-completed::after {
+                    background: var(--stepper-active-connector-color);
                 }
             }
         }
 
-        .p-multiselect-header {
-            background: var(--datatable-header-bg);
-            border-bottom: 1px solid var(--input-border);
+        .p-stepper-panels {
+            border-top: none;
+            border-left: 1px solid var(--stepper-border);
+            margin-left: 1rem;
+        }
+    }
+}
 
-            .p-multiselect-close {
-                color: var(--input-text-color);
+// Stepper Actions (Next/Previous buttons)
+.p-stepper-action {
+    background: var(--stepper-header-bg);
+    color: var(--stepper-text-color);
+    border: 1px solid var(--stepper-border);
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem 0.25rem;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--stepper-active-header-bg);
+        color: var(--stepper-active-text-color);
+        border-color: var(--stepper-active-header-bg);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:hover {
+            background: var(--stepper-header-bg);
+            color: var(--stepper-text-color);
+            border-color: var(--stepper-border);
+        }
+    }
+
+    &.p-stepper-action-primary {
+        background: var(--stepper-active-header-bg);
+        color: var(--stepper-active-text-color);
+        border-color: var(--stepper-active-header-bg);
+
+        &:hover {
+            background: var(--stepper-completed-header-bg);
+            border-color: var(--stepper-completed-header-bg);
+        }
+    }
+}
+
+// Steps component (alternative stepper)
+.p-steps {
+    .p-steps-item {
+        .p-menuitem-link {
+            background: transparent;
+            border: none;
+            color: var(--stepper-text-color);
+
+            .p-steps-number {
+                background: var(--stepper-number-bg);
+                color: var(--stepper-text-color);
+                border: 2px solid var(--stepper-border);
+            }
+
+            .p-steps-title {
+                color: var(--stepper-text-color);
+            }
+        }
+
+        &.p-highlight .p-menuitem-link {
+            .p-steps-number {
+                background: var(--stepper-active-number-bg);
+                color: var(--stepper-active-text-color);
+                border-color: var(--stepper-active-number-bg);
+            }
+
+            .p-steps-title {
+                color: var(--stepper-active-text-color);
+            }
+        }
+
+        &.p-disabled .p-menuitem-link {
+            opacity: 0.5;
+        }
+    }
+}
+//*------------------------------ Stepper ------------------------------*//
+
+
+//*------------------------------ File Upload ------------------------------*//
+.p-fileupload {
+    background: var(--fileupload-bg);
+    border: 1px solid var(--fileupload-border);
+    border-radius: 8px;
+    color: var(--fileupload-text-color);
+
+    // FileUpload Header
+    .p-fileupload-buttonbar {
+        background: var(--fileupload-header-bg);
+        border-bottom: 1px solid var(--fileupload-border);
+        border-radius: 8px 8px 0 0;
+        padding: 1rem;
+
+        .p-button {
+            background: var(--fileupload-button-bg);
+            color: #ffffff;
+            border: 1px solid var(--fileupload-button-bg);
+            border-radius: 6px;
+            margin-right: 0.5rem;
+            transition: all 0.2s;
+
+            &:hover {
+                background: var(--fileupload-button-hover-bg);
+                border-color: var(--fileupload-button-hover-bg);
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+            }
+
+            &.p-fileupload-choose-button {
+                background: var(--fileupload-button-bg);
+                
+                &:hover {
+                    background: var(--fileupload-button-hover-bg);
+                }
+            }
+
+            &.p-fileupload-upload-button {
+                background: #22c55e;
+                border-color: #22c55e;
+                
+                &:hover {
+                    background: #16a34a;
+                    border-color: #16a34a;
+                }
+
+                &:disabled {
+                    background: var(--fileupload-progress-bg);
+                    border-color: var(--fileupload-progress-bg);
+                    opacity: 0.6;
+                }
+            }
+
+            &.p-fileupload-cancel-button {
+                background: #dc3545;
+                border-color: #dc3545;
+                
+                &:hover {
+                    background: #c82333;
+                    border-color: #c82333;
+                }
+
+                &:disabled {
+                    background: var(--fileupload-progress-bg);
+                    border-color: var(--fileupload-progress-bg);
+                    opacity: 0.6;
+                }
             }
         }
     }
 
-    // Calendar/DatePicker Dark Mode
-    .p-calendar {
-        .p-inputtext {
-            background: var(--input-bg);
-            color: var(--input-text-color);
-            border: 1px solid var(--input-border);
-        }
-    }
+    // FileUpload Content Area
+    .p-fileupload-content {
+        background: var(--fileupload-content-bg);
+        border-radius: 0 0 8px 8px;
+        padding: 1.5rem;
+        color: var(--fileupload-text-color);
 
-    .p-datepicker {
-        background: var(--input-bg);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-        .p-datepicker-header {
-            background: var(--datatable-header-bg);
-            color: var(--input-text-color);
-            border-bottom: 1px solid var(--input-border);
+        // Drop zone styling
+        &.p-fileupload-highlight {
+            border: 2px dashed var(--fileupload-drag-border);
+            background: var(--fileupload-drag-bg);
+            border-radius: 8px;
+            margin: -1px;
         }
 
-        .p-datepicker-calendar {
-            td {
-                >span {
-                    color: var(--input-text-color);
+        // Empty message
+        .p-fileupload-empty {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-color-muted);
+            
+            i {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                color: var(--fileupload-border);
+            }
+        }
+
+        // File list
+        .p-fileupload-files {
+            .p-fileupload-row {
+                background: var(--fileupload-file-bg);
+                border: 1px solid var(--fileupload-border);
+                border-radius: 6px;
+                margin-bottom: 0.5rem;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                transition: all 0.2s;
+
+                &:hover {
+                    background: var(--fileupload-file-hover-bg);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                // File info
+                > div {
+                    color: var(--fileupload-text-color);
+                    
+                    &:first-child {
+                        flex: 1;
+                        
+                        .p-fileupload-filename {
+                            font-weight: 600;
+                            margin-bottom: 0.25rem;
+                        }
+                        
+                        .p-fileupload-filesize {
+                            color: var(--text-color-secondary);
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+
+                // Remove button
+                .p-fileupload-remove {
+                    background: #dc3545;
+                    color: #ffffff;
+                    border: 1px solid #dc3545;
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    margin-left: 1rem;
 
                     &:hover {
-                        background: var(--input-hover-border);
-                    }
-
-                    &.p-highlight {
-                        background: $primaryColor;
-                        color: $primaryTextColor;
+                        background: #c82333;
+                        border-color: #c82333;
                     }
                 }
             }
-
-            .p-datepicker-other-month {
-                color: var(--input-placeholder-color);
-            }
-        }
-
-        .p-monthpicker {
-            .p-monthpicker-month {
-                color: var(--input-text-color);
-
-                &:hover {
-                    background: var(--input-hover-border);
-                }
-
-                &.p-highlight {
-                    background: $primaryColor;
-                    color: $primaryTextColor;
-                }
-            }
         }
     }
 
-    // AutoComplete Dark Mode
-    .p-autocomplete {
-        .p-autocomplete-input {
-            background: var(--input-bg);
-            color: var(--input-text-color);
-            border: 1px solid var(--input-border);
-
-            &::placeholder {
-                color: var(--input-placeholder-color);
-            }
-        }
-
-        .p-autocomplete-dropdown {
-            background: var(--input-bg);
-            border: 1px solid var(--input-border);
-            border-left: none;
-        }
-    }
-
-    .p-autocomplete-panel {
-        background: var(--input-bg);
-        border: 1px solid var(--input-border);
+    // Progress Bar
+    .p-progressbar {
+        background: var(--fileupload-progress-bg);
+        border: 1px solid var(--fileupload-border);
         border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        height: 0.5rem;
+        overflow: hidden;
+        margin: 1rem 0;
 
-        .p-autocomplete-items {
-            .p-autocomplete-item {
-                color: var(--input-text-color);
+        .p-progressbar-value {
+            background: var(--fileupload-progress-value-bg);
+            border-radius: 6px;
+            transition: width 0.3s;
+        }
 
-                &:hover {
-                    background: var(--input-hover-border);
-                }
-
-                &.p-highlight {
-                    background: $primaryColor;
-                    color: $primaryTextColor;
-                }
-            }
+        .p-progressbar-label {
+            color: var(--fileupload-text-color);
+            font-size: 0.75rem;
+            font-weight: 600;
         }
     }
-
-    // InputNumber Dark Mode
-    .p-inputnumber {
-        .p-inputnumber-input {
-            background: var(--input-bg);
-            color: var(--input-text-color);
-            border: 1px solid var(--input-border);
-        }
-
-        .p-inputnumber-button-group {
-            .p-inputnumber-button {
-                background: var(--datatable-header-bg);
-                color: var(--input-text-color);
-                border: 1px solid var(--input-border);
-
-                &:hover {
-                    background: var(--input-hover-border);
-                }
-            }
-        }
-    }
-
-    // Password Dark Mode
-    .p-password {
-        .p-password-input {
-            background: var(--input-bg);
-            color: var(--input-text-color);
-            border: 1px solid var(--input-border);
-
-            &::placeholder {
-                color: var(--input-placeholder-color);
-            }
-        }
-    }
-
-    .p-password-panel {
-        background: var(--input-bg);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-        .p-password-meter {
-            .p-password-strength {
-                &.weak {
-                    background: #dc3545;
-                }
-
-                &.medium {
-                    background: #ffc107;
-                }
-
-                &.strong {
-                    background: #28a745;
-                }
-            }
-        }
-    }
-
-    //*------------------------------ Input ------------------------------*//
-
-
-    //*------------------------------ Skeleton ------------------------------*//
-    .p-skeleton {
-        background: var(--skeleton-bg);
-        border-radius: 6px;
-
-        // Override the default animation
-        &::after {
-            background: linear-gradient(90deg,
-                    transparent,
-                    var(--skeleton-animation-bg),
-                    transparent);
-            animation: p-skeleton-animation 1.2s ease-in-out infinite;
-        }
-
-        // Different skeleton shapes
-        &.p-skeleton-circle {
-            border-radius: 50%;
-        }
-
-        &.p-skeleton-none {
-            border-radius: 0;
-        }
-    }
-
-    // Custom skeleton animation for dark mode
-    @keyframes p-skeleton-animation {
-        0% {
-            transform: translateX(-100%);
-        }
-
-        50% {
-            transform: translateX(100%);
-        }
-
-        100% {
-            transform: translateX(100%);
-        }
-    }
-
-    // Skeleton in different contexts (optional variations)
-    .p-card .p-skeleton {
-        background: rgba(var(--skeleton-bg), 0.6);
-    }
-
-    .p-datatable .p-skeleton {
-        background: var(--skeleton-bg);
-        margin: 2px 0;
-    }
-
-    // Skeleton text variations
-    .p-skeleton.p-skeleton-text {
-        height: 1rem;
-
-        &.p-skeleton-sm {
-            height: 0.875rem;
-        }
-
-        &.p-skeleton-lg {
-            height: 1.25rem;
-        }
-
-        &.p-skeleton-xl {
-            height: 1.5rem;
-        }
-    }
-
-    // Skeleton for specific component contexts
-    .p-skeleton-list {
-        .p-skeleton {
-            margin-bottom: 0.5rem;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    // Avatar skeleton
-    .p-skeleton.p-skeleton-avatar {
-        width: 2rem;
-        height: 2rem;
-
-        &.p-skeleton-avatar-sm {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-
-        &.p-skeleton-avatar-lg {
-            width: 3rem;
-            height: 3rem;
-        }
-
-        &.p-skeleton-avatar-xl {
-            width: 4rem;
-            height: 4rem;
-        }
-    }
-
-    // Button skeleton
-    .p-skeleton.p-skeleton-button {
-        height: 2.5rem;
-        border-radius: 6px;
-
-        &.p-skeleton-button-sm {
-            height: 2rem;
-        }
-
-        &.p-skeleton-button-lg {
-            height: 3rem;
-        }
-    }
-
-    //*------------------------------ Skeleton ------------------------------*//
 }
+
+// Basic FileUpload (without UI)
+.p-fileupload-basic {
+    .p-button {
+        background: var(--fileupload-button-bg);
+        color: #ffffff;
+        border: 1px solid var(--fileupload-button-bg);
+        border-radius: 6px;
+        padding: 0.75rem 1.5rem;
+        transition: all 0.2s;
+
+        &:hover {
+            background: var(--fileupload-button-hover-bg);
+            border-color: var(--fileupload-button-hover-bg);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
+        }
+    }
+
+    .p-fileupload-files {
+        margin-top: 1rem;
+
+        .p-fileupload-file {
+            background: var(--fileupload-file-bg);
+            border: 1px solid var(--fileupload-border);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--fileupload-text-color);
+
+            &:hover {
+                background: var(--fileupload-file-hover-bg);
+            }
+
+            .p-fileupload-file-name {
+                font-weight: 600;
+            }
+
+            .p-fileupload-file-size {
+                color: var(--text-color-secondary);
+                font-size: 0.875rem;
+                margin-left: 0.5rem;
+            }
+
+            .p-fileupload-remove {
+                background: #dc3545;
+                color: #ffffff;
+                border: none;
+                border-radius: 50%;
+                width: 1.5rem;
+                height: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background: #c82333;
+                }
+            }
+        }
+    }
+}
+
+// Upload message styling
+.p-fileupload-choose-button input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+// Drag and drop overlay
+.p-fileupload-drag-highlight {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--fileupload-drag-bg);
+        border: 2px dashed var(--fileupload-drag-border);
+        border-radius: 8px;
+        z-index: 1000;
+    }
+    
+    &::after {
+        content: 'Drop files here';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--fileupload-drag-border);
+        font-size: 1.1rem;
+        font-weight: 600;
+        z-index: 1001;
+        pointer-events: none;
+    }
+}
+
+// File type icons (optional enhancement)
+.p-fileupload-file-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    &.file-pdf {
+        background: #dc3545;
+    }
+
+    &.file-doc,
+    &.file-docx {
+        background: #2b77c9;
+    }
+
+    &.file-xls,
+    &.file-xlsx {
+        background: #22c55e;
+    }
+
+    &.file-ppt,
+    &.file-pptx {
+        background: #f59e0b;
+    }
+
+    &.file-img {
+        background: #8b5cf6;
+    }
+
+    &.file-default {
+        background: var(--fileupload-progress-bg);
+    }
+}
+//*------------------------------ File Upload ------------------------------*//
