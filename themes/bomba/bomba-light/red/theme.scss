@@ -15,6 +15,7 @@ $customBg: #f8fafc !default;
 $customTextColor: #000 !default;
 
 $customCardColorOne: #f1f5f9 !default;
+$customCardColorTwo: #cbd5e1 !default;
 $customCardBorder: #d1d5db !default;
 
 $borderColor: #d1d5db !default;
@@ -32,6 +33,7 @@ $borderColor: #d1d5db !default;
     --custom-text-color: #{$customTextColor};
 
     --custom-card-color-one: #{$customCardColorOne};
+    --custom-card-color-two: #{$customCardColorTwo};
     --custom-card-border: #{$customCardBorder};
 
     --border-color: #{$borderColor};
