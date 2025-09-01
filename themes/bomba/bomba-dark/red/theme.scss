@@ -289,6 +289,26 @@ $cardSubtitleColor: #b0b0b0 !default;
         }
     }
 
+    // Column Group Header (like grouped columns)
+    .p-datatable-thead>tr.p-datatable-headerrow-group>th {
+        background: #475569;
+        color: #ffffff;
+        border-bottom: 2px solid var(--datatable-border-color);
+        border-right: 1px solid var(--datatable-border-color);
+        border-top: none;
+        border-left: none;
+        font-weight: 700;
+        text-align: center;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
     // Table body rows
     .p-datatable-tbody>tr {
         background: var(--datatable-row-bg);
@@ -327,6 +347,126 @@ $cardSubtitleColor: #b0b0b0 !default;
         }
     }
 
+    // Summary Row (calculations, totals, etc.)
+    .p-datatable-tbody>tr.p-datatable-summaryrow>td {
+        background: var(--datatable-row-bg);
+        color: var(--datatable-text-color);
+        border-top: 2px solid var(--datatable-border-color);
+        border-bottom: 1px solid var(--datatable-border-color);
+        border-right: 1px solid var(--datatable-border-color);
+        border-left: none;
+        font-weight: 600;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    // Subtotal rows
+    .p-datatable-tbody>tr.p-datatable-subtotalrow>td {
+        background: rgba(71, 85, 105, 0.7);
+        color: #ffffff;
+        border-top: 1px solid var(--datatable-border-color);
+        border-bottom: 1px solid var(--datatable-border-color);
+        border-right: 1px solid var(--datatable-border-color);
+        border-left: none;
+        font-weight: 600;
+        font-style: italic;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    // Row Group Header (when using row grouping)
+    .p-datatable-tbody>tr.p-rowgroup-header>td {
+        background: #475569;
+        color: #ffffff;
+        border: 1px solid var(--datatable-border-color);
+        border-left: none;
+        border-right: none;
+        font-weight: 700;
+        padding: 0.75rem 1rem;
+    }
+
+    // Row Group Footer
+    .p-datatable-tbody>tr.p-rowgroup-footer>td {
+        background: var(--datatable-row-bg);
+        color: var(--datatable-text-color);
+        border: 1px solid var(--datatable-border-color);
+        border-left: none;
+        border-right: none;
+        font-weight: 600;
+        font-style: italic;
+        padding: 0.75rem 1rem;
+    }
+
+    // Table Footer (tfoot)
+    .p-datatable-tfoot>tr>td {
+        background: var(--datatable-header-bg);
+        color: var(--datatable-header-text-color);
+        border-top: 2px solid var(--datatable-border-color);
+        border-bottom: none;
+        border-right: 1px solid var(--datatable-border-color);
+        border-left: none;
+        font-weight: 600;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    // Column Group Footer
+    .p-datatable-tfoot>tr.p-datatable-footerrow-group>td {
+        background: #475569;
+        color: #ffffff;
+        border-top: 2px solid var(--datatable-border-color);
+        border-bottom: 1px solid var(--datatable-border-color);
+        border-right: 1px solid var(--datatable-border-color);
+        border-left: none;
+        font-weight: 700;
+        text-align: center;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    // Summary Row in Footer
+    .p-datatable-tfoot>tr.p-datatable-summaryrow>td {
+        background: var(--datatable-row-bg);
+        color: var(--datatable-text-color);
+        border-top: 2px solid var(--datatable-border-color);
+        border-bottom: 1px solid var(--datatable-border-color);
+        border-right: 1px solid var(--datatable-border-color);
+        border-left: none;
+        font-weight: 600;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
     // Footer section
     .p-datatable-footer {
         background: var(--datatable-header-bg);
@@ -342,6 +482,86 @@ $cardSubtitleColor: #b0b0b0 !default;
         border-collapse: separate;
         border-spacing: 0;
         border: none;
+    }
+
+    // Frozen columns with footer
+    &.p-datatable-frozen-columns {
+        .p-datatable-tfoot>tr>td.p-frozen-column {
+            background: var(--datatable-header-bg);
+            border-right: 2px solid var(--datatable-border-color);
+            position: sticky;
+            z-index: 2;
+
+            &:last-child {
+                border-right: 1px solid var(--datatable-border-color);
+            }
+        }
+    }
+}
+
+// Footer Template Content
+.p-datatable-footer-template {
+    background: var(--datatable-header-bg);
+    color: var(--datatable-header-text-color);
+    border-top: 2px solid var(--datatable-border-color);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+
+    .p-datatable-footer-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .p-datatable-footer-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .p-datatable-footer-label {
+                font-weight: 500;
+                color: var(--datatable-header-text-color);
+            }
+
+            .p-datatable-footer-value {
+                font-weight: 700;
+                color: $primaryColor;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+// ColumnGroup Component Dark Mode
+.p-columngroup {
+
+    // Header column groups
+    &.p-columngroup-header {
+        .p-columngroup-row {
+            .p-columngroup-column {
+                background: #475569;
+                color: #ffffff;
+                border: 1px solid var(--datatable-border-color);
+                font-weight: 700;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
+    }
+
+    // Footer column groups
+    &.p-columngroup-footer {
+        .p-columngroup-row {
+            .p-columngroup-column {
+                background: var(--datatable-header-bg);
+                color: var(--datatable-header-text-color);
+                border: 1px solid var(--datatable-border-color);
+                font-weight: 600;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
     }
 }
 
@@ -380,6 +600,26 @@ $cardSubtitleColor: #b0b0b0 !default;
         }
     }
 }
+
+// // Responsive footer
+// @media screen and (max-width: 768px) {
+//     .p-datatable {
+//         .p-datatable-tfoot>tr>td {
+//             padding: 0.75rem 0.5rem;
+//             font-size: 0.9rem;
+//         }
+
+//         .p-datatable-footer-template {
+//             padding: 0.75rem 1rem;
+
+//             .p-datatable-footer-summary {
+//                 flex-direction: column;
+//                 align-items: flex-start;
+//                 gap: 0.5rem;
+//             }
+//         }
+//     }
+// }
 
 //*------------------------------ DataTable ------------------------------*//
 
@@ -2287,7 +2527,7 @@ $cardSubtitleColor: #b0b0b0 !default;
 
             p {
                 margin: 0 0 1rem 0;
-                
+
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -2478,4 +2718,5 @@ $cardSubtitleColor: #b0b0b0 !default;
         }
     }
 }
+
 //*------------------------------ Card ------------------------------*//
