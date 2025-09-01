@@ -111,6 +111,17 @@ $dialogBorder: #{$borderColor} !default;
 $dialogTextColor: #e0e0e0 !default;
 $dialogHeaderTextColor: #ffffff !default;
 $dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
+
+// Card
+$cardBg: #1e293b !default;
+$cardHeaderBg: #334155 !default;
+$cardContentBg: #1e293b !default;
+$cardFooterBg: #334155 !default;
+$cardBorder: #{$borderColor} !default;
+$cardTextColor: #e0e0e0 !default;
+$cardHeaderTextColor: #ffffff !default;
+$cardTitleColor: #ffffff !default;
+$cardSubtitleColor: #b0b0b0 !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -221,6 +232,17 @@ $dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
     --dialog-text-color: #{$dialogTextColor};
     --dialog-header-text-color: #{$dialogHeaderTextColor};
     --dialog-mask-bg: #{$dialogMaskBg};
+
+    // Card
+    --card-bg: #{$cardBg};
+    --card-header-bg: #{$cardHeaderBg};
+    --card-content-bg: #{$cardContentBg};
+    --card-footer-bg: #{$cardFooterBg};
+    --card-border: #{$cardBorder};
+    --card-text-color: #{$cardTextColor};
+    --card-header-text-color: #{$cardHeaderTextColor};
+    --card-title-color: #{$cardTitleColor};
+    --card-subtitle-color: #{$cardSubtitleColor};
 }
 
 
@@ -2169,11 +2191,11 @@ $dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
 // Maximized Dialog
 .p-dialog.p-dialog-maximized {
     border-radius: 0;
-    
+
     .p-dialog-header {
         border-radius: 0;
     }
-    
+
     .p-dialog-footer {
         border-radius: 0;
     }
@@ -2199,6 +2221,259 @@ $dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
         border-radius: 8px;
     }
 }
+
 //*------------------------------ Dialog ------------------------------*//
 
+//*------------------------------ Card ------------------------------*//
+.p-card {
+    background: var(--card-bg);
+    color: var(--card-text-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.2s;
 
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+    }
+
+    // Card Header
+    .p-card-header {
+        background: var(--card-header-bg);
+        color: var(--card-header-text-color);
+        border-bottom: 1px solid var(--card-border);
+        padding: 1rem 1.5rem;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+        }
+    }
+
+    // Card Body
+    .p-card-body {
+        background: var(--card-content-bg);
+        color: var(--card-text-color);
+        padding: 0;
+
+        // Card Title
+        .p-card-title {
+            color: var(--card-title-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+            padding: 1.5rem 1.5rem 0 1.5rem;
+        }
+
+        // Card Subtitle
+        .p-card-subtitle {
+            color: var(--card-subtitle-color);
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin: 0 0 1rem 0;
+            padding: 0 1.5rem;
+        }
+
+        // Card Content
+        .p-card-content {
+            color: var(--card-text-color);
+            padding: 1.5rem;
+            line-height: 1.6;
+
+            p {
+                margin: 0 0 1rem 0;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        // Card Footer
+        .p-card-footer {
+            background: var(--card-footer-bg);
+            color: var(--card-header-text-color);
+            border-top: 1px solid var(--card-border);
+            padding: 1rem 1.5rem;
+            margin-top: auto;
+
+            .p-button {
+                margin-right: 0.5rem;
+                margin-bottom: 0.5rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    // Card with only content (no title/subtitle)
+    &:not(:has(.p-card-title)):not(:has(.p-card-subtitle)) {
+        .p-card-content {
+            padding: 1.5rem;
+        }
+    }
+
+    // Card without header
+    &:not(:has(.p-card-header)) {
+        .p-card-title {
+            padding-top: 1.5rem;
+        }
+    }
+
+    // Card without footer
+    &:not(:has(.p-card-footer)) {
+        .p-card-content {
+            padding-bottom: 1.5rem;
+        }
+    }
+}
+
+// Card variations
+.p-card.p-card-outlined {
+    border: 2px solid var(--card-border);
+    box-shadow: none;
+
+    &:hover {
+        border-color: $primaryColor;
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.1);
+    }
+}
+
+.p-card.p-card-elevated {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transform: translateY(-4px);
+    }
+}
+
+.p-card.p-card-flat {
+    box-shadow: none;
+    border: none;
+
+    &:hover {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+// Card with image
+.p-card.p-card-image {
+    .p-card-header {
+        padding: 0;
+        border: none;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+
+    .p-card-body {
+        .p-card-title {
+            padding-top: 1.5rem;
+        }
+    }
+}
+
+// Compact card
+.p-card.p-card-compact {
+    .p-card-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .p-card-body {
+        .p-card-title {
+            font-size: 1.1rem;
+            padding: 1rem 1rem 0 1rem;
+        }
+
+        .p-card-subtitle {
+            font-size: 0.85rem;
+            padding: 0 1rem;
+        }
+
+        .p-card-content {
+            padding: 1rem;
+        }
+
+        .p-card-footer {
+            padding: 0.75rem 1rem;
+        }
+    }
+}
+
+// Card in grid/flex layouts
+.p-card.p-card-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .p-card-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .p-card-content {
+            flex: 1;
+        }
+
+        .p-card-footer {
+            margin-top: auto;
+        }
+    }
+}
+
+// Card with actions
+.p-card-actions {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--card-border);
+    background: var(--card-footer-bg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    &.p-card-actions-left {
+        justify-content: flex-start;
+    }
+
+    &.p-card-actions-center {
+        justify-content: center;
+    }
+
+    &.p-card-actions-between {
+        justify-content: space-between;
+    }
+}
+
+// Card loading state
+.p-card.p-card-loading {
+    .p-card-content {
+        position: relative;
+        min-height: 100px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(var(--card-bg), 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+    }
+}
+//*------------------------------ Card ------------------------------*//
