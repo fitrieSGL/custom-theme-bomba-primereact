@@ -124,13 +124,8 @@ $cardHeaderTextColor: #ffffff !default;
 $cardTitleColor: #ffffff !default;
 $cardSubtitleColor: #b0b0b0 !default;
 
-// //* Scrollbar
-// $scrollbarTrackBg: #1e293b !default;
-// $scrollbarThumbBg: #{$borderColor} !default;
-// $scrollbarThumbHoverBg: #475569 !default;
-// $scrollbarThumbActiveBg: #64748b !default;
-// $scrollbarWidth: 8px !default;
-// $scrollbarBorderRadius: 4px !default;
+// leaflet
+$leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -253,6 +248,10 @@ $cardSubtitleColor: #b0b0b0 !default;
     --card-header-text-color: #{$cardHeaderTextColor};
     --card-title-color: #{$cardTitleColor};
     --card-subtitle-color: #{$cardSubtitleColor};
+
+    // Leaflet
+    --leaflet-filter-color: #{$leafletFilterColor};
+
 }
 
 
