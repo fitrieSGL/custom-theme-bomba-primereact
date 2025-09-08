@@ -124,6 +124,13 @@ $cardHeaderTextColor: #ffffff !default;
 $cardTitleColor: #ffffff !default;
 $cardSubtitleColor: #b0b0b0 !default;
 
+// OverlayPanel
+$overlayPanelBg: #1e293b !default;
+$overlayPanelBorder: #{$borderColor} !default;
+$overlayPanelTextColor: #e0e0e0 !default;
+$overlayPanelShadow: rgba(0, 0, 0, 0.5) !default;
+$overlayPanelArrowColor: #1e293b !default;
+
 // leaflet
 $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !default;
 //*-------------------------- Custom colors --------------------------*//
@@ -248,6 +255,13 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
     --card-header-text-color: #{$cardHeaderTextColor};
     --card-title-color: #{$cardTitleColor};
     --card-subtitle-color: #{$cardSubtitleColor};
+
+    // OverlayPanel
+    --overlaypanel-bg: #{$overlayPanelBg};
+    --overlaypanel-border: #{$overlayPanelBorder};
+    --overlaypanel-text-color: #{$overlayPanelTextColor};
+    --overlaypanel-shadow: #{$overlayPanelShadow};
+    --overlaypanel-arrow-color: #{$overlayPanelArrowColor};
 
     // Leaflet
     --leaflet-filter-color: #{$leafletFilterColor};
@@ -2794,3 +2808,47 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
 }
 
 //*------------------------------ Scrollbar ------------------------------*//
+
+
+//*------------------------------ OverlayPanel ------------------------------*//
+.p-overlaypanel {
+    background: #1e293b;
+    color: #e0e0e0;
+    border: 1px solid #{$borderColor};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    // Content area
+    .p-overlaypanel-content {
+        color: #e0e0e0;
+    }
+
+    // Close button
+    .p-overlaypanel-close {
+        color: #e0e0e0;
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+    }
+
+    // Text elements
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff;
+    }
+
+    p {
+        color: #e0e0e0;
+    }
+
+    // Links
+    a {
+        color: #{$primaryColor};
+        
+        &:hover {
+            color: #{$primaryLightColor};
+        }
+    }
+}
+
+//*------------------------------ OverlayPanel ------------------------------*//
