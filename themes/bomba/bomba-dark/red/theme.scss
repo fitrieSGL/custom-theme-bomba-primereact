@@ -269,328 +269,57 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
 }
 
 
+// PrimeReact Dark Mode - Colors Only (No Layout Properties)
+
 //*------------------------------ DataTable ------------------------------*//
 .p-datatable {
-    background: var(--datatable-bg);
-    color: var(--datatable-text-color);
-    border: 2px solid var(--datatable-border-color);
-    border-radius: 8px;
-    overflow: hidden;
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
-    // Table wrapper border
-    .p-datatable-wrapper {
-        border: 1px solid var(--datatable-border-color);
-    }
-
-    // Header section
     .p-datatable-header {
-        background: var(--datatable-header-bg);
-        color: var(--datatable-header-text-color);
-        border-bottom: 2px solid var(--datatable-border-color);
-        border-left: none;
-        border-right: none;
-        border-top: none;
-    }
-
-    // Column headers
-    .p-datatable-thead>tr>th {
-        background: var(--datatable-header-bg);
-        color: var(--datatable-header-text-color);
-        border-bottom: 2px solid var(--datatable-border-color);
-        border-right: 1px solid var(--datatable-border-color);
-        border-top: none;
-        border-left: none;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-    }
-
-    // Column Group Header (like grouped columns)
-    .p-datatable-thead>tr.p-datatable-headerrow-group>th {
-        background: #475569;
+        background: #334155;
         color: #ffffff;
-        border-bottom: 2px solid var(--datatable-border-color);
-        border-right: 1px solid var(--datatable-border-color);
-        border-top: none;
-        border-left: none;
-        font-weight: 700;
-        text-align: center;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
+        border-color: #{$borderColor};
     }
 
-    // Table body rows
-    .p-datatable-tbody>tr {
-        background: var(--datatable-row-bg);
-        color: var(--datatable-text-color);
-        border-bottom: 1px solid var(--datatable-border-color);
-        border-left: none;
-        border-right: none;
-        border-top: none;
+    .p-datatable-thead > tr > th {
+        background: #334155;
+        color: #ffffff;
+        border-color: #{$borderColor};
+    }
+
+    .p-datatable-tbody > tr {
+        background: #1e293b;
+        color: #e0e0e0;
+        border-color: #{$borderColor};
 
         &:nth-child(even) {
-            background: var(--datatable-row-alt-bg);
+            background: #262f3d;
         }
 
         &:hover {
-            background: var(--datatable-row-hover-bg) !important;
+            background: #2d3748 !important;
         }
 
-        &:last-child {
-            border-bottom: none;
-        }
-
-        // Table cells
-        >td {
-            border-right: 1px solid var(--datatable-border-color);
-            border-bottom: none;
-            border-top: none;
-            border-left: none;
-
-            &:first-child {
-                border-left: none;
-            }
-
-            &:last-child {
-                border-right: none;
-            }
+        > td {
+            border-color: #{$borderColor};
         }
     }
 
-    // Summary Row (calculations, totals, etc.)
-    .p-datatable-tbody>tr.p-datatable-summaryrow>td {
-        background: var(--datatable-row-bg);
-        color: var(--datatable-text-color);
-        border-top: 2px solid var(--datatable-border-color);
-        border-bottom: 1px solid var(--datatable-border-color);
-        border-right: 1px solid var(--datatable-border-color);
-        border-left: none;
-        font-weight: 600;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-    }
-
-    // Subtotal rows
-    .p-datatable-tbody>tr.p-datatable-subtotalrow>td {
-        background: rgba(71, 85, 105, 0.7);
-        color: #ffffff;
-        border-top: 1px solid var(--datatable-border-color);
-        border-bottom: 1px solid var(--datatable-border-color);
-        border-right: 1px solid var(--datatable-border-color);
-        border-left: none;
-        font-weight: 600;
-        font-style: italic;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-    }
-
-    // Row Group Header (when using row grouping)
-    .p-datatable-tbody>tr.p-rowgroup-header>td {
-        background: #475569;
-        color: #ffffff;
-        border: 1px solid var(--datatable-border-color);
-        border-left: none;
-        border-right: none;
-        font-weight: 700;
-        padding: 0.75rem 1rem;
-    }
-
-    // Row Group Footer
-    .p-datatable-tbody>tr.p-rowgroup-footer>td {
-        background: var(--datatable-row-bg);
-        color: var(--datatable-text-color);
-        border: 1px solid var(--datatable-border-color);
-        border-left: none;
-        border-right: none;
-        font-weight: 600;
-        font-style: italic;
-        padding: 0.75rem 1rem;
-    }
-
-    // Table Footer (tfoot)
-    .p-datatable-tfoot>tr>td {
-        background: var(--datatable-header-bg);
-        color: var(--datatable-header-text-color);
-        border-top: 2px solid var(--datatable-border-color);
-        border-bottom: none;
-        border-right: 1px solid var(--datatable-border-color);
-        border-left: none;
-        font-weight: 600;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-    }
-
-    // Column Group Footer
-    .p-datatable-tfoot>tr.p-datatable-footerrow-group>td {
-        background: #475569;
-        color: #ffffff;
-        border-top: 2px solid var(--datatable-border-color);
-        border-bottom: 1px solid var(--datatable-border-color);
-        border-right: 1px solid var(--datatable-border-color);
-        border-left: none;
-        font-weight: 700;
-        text-align: center;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-    }
-
-    // Summary Row in Footer
-    .p-datatable-tfoot>tr.p-datatable-summaryrow>td {
-        background: var(--datatable-row-bg);
-        color: var(--datatable-text-color);
-        border-top: 2px solid var(--datatable-border-color);
-        border-bottom: 1px solid var(--datatable-border-color);
-        border-right: 1px solid var(--datatable-border-color);
-        border-left: none;
-        font-weight: 600;
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-    }
-
-    // Footer section
     .p-datatable-footer {
-        background: var(--datatable-header-bg);
-        color: var(--datatable-header-text-color);
-        border-top: 2px solid var(--datatable-border-color);
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
-    }
-
-    // Table element itself
-    .p-datatable-table {
-        border-collapse: separate;
-        border-spacing: 0;
-        border: none;
-    }
-
-    // Frozen columns with footer
-    &.p-datatable-frozen-columns {
-        .p-datatable-tfoot>tr>td.p-frozen-column {
-            background: var(--datatable-header-bg);
-            border-right: 2px solid var(--datatable-border-color);
-            position: sticky;
-            z-index: 2;
-
-            &:last-child {
-                border-right: 1px solid var(--datatable-border-color);
-            }
-        }
+        background: #334155;
+        color: #ffffff;
+        border-color: #{$borderColor};
     }
 }
+//*------------------------------ DataTable ------------------------------*//
 
-// Footer Template Content
-.p-datatable-footer-template {
-    background: var(--datatable-header-bg);
-    color: var(--datatable-header-text-color);
-    border-top: 2px solid var(--datatable-border-color);
-    padding: 1rem 1.5rem;
-    font-weight: 600;
-
-    .p-datatable-footer-summary {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-
-        .p-datatable-footer-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-
-            .p-datatable-footer-label {
-                font-weight: 500;
-                color: var(--datatable-header-text-color);
-            }
-
-            .p-datatable-footer-value {
-                font-weight: 700;
-                color: $primaryColor;
-                font-size: 1.1rem;
-            }
-        }
-    }
-}
-
-// ColumnGroup Component Dark Mode
-.p-columngroup {
-
-    // Header column groups
-    &.p-columngroup-header {
-        .p-columngroup-row {
-            .p-columngroup-column {
-                background: #475569;
-                color: #ffffff;
-                border: 1px solid var(--datatable-border-color);
-                font-weight: 700;
-                text-align: center;
-                padding: 1rem;
-            }
-        }
-    }
-
-    // Footer column groups
-    &.p-columngroup-footer {
-        .p-columngroup-row {
-            .p-columngroup-column {
-                background: var(--datatable-header-bg);
-                color: var(--datatable-header-text-color);
-                border: 1px solid var(--datatable-border-color);
-                font-weight: 600;
-                text-align: center;
-                padding: 1rem;
-            }
-        }
-    }
-}
-
-// Paginator Dark Mode
+//*------------------------------ Paginator ------------------------------*//
 .p-paginator {
-    background: var(--datatable-pagination-bg);
-    color: var(--datatable-pagination-text-color);
-    border: 1px solid var(--datatable-border-color);
+    background: #334155;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
     .p-paginator-page,
     .p-paginator-next,
@@ -598,2257 +327,350 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
     .p-paginator-first,
     .p-paginator-last {
         background: transparent;
-        color: var(--datatable-pagination-text-color);
-        border: 1px solid var(--datatable-border-color);
+        color: #e0e0e0;
+        border-color: #{$borderColor};
 
         &:hover {
-            background: var(--datatable-pagination-hover-bg);
+            background: #475569;
         }
 
         &.p-highlight {
-            background: $primaryColor;
-            color: $primaryTextColor;
-        }
-    }
-
-    .p-dropdown {
-        background: var(--datatable-pagination-bg);
-        color: var(--datatable-pagination-text-color);
-        border: 1px solid var(--datatable-border-color);
-
-        &:hover {
-            border-color: $primaryColor;
+            background: #e74c3c;
+            color: #ffffff;
         }
     }
 }
+//*------------------------------ Paginator ------------------------------*//
 
-// // Responsive footer
-// @media screen and (max-width: 768px) {
-//     .p-datatable {
-//         .p-datatable-tfoot>tr>td {
-//             padding: 0.75rem 0.5rem;
-//             font-size: 0.9rem;
-//         }
-
-//         .p-datatable-footer-template {
-//             padding: 0.75rem 1rem;
-
-//             .p-datatable-footer-summary {
-//                 flex-direction: column;
-//                 align-items: flex-start;
-//                 gap: 0.5rem;
-//             }
-//         }
-//     }
-// }
-
-//*------------------------------ DataTable ------------------------------*//
-
-//*------------------------------ Input ------------------------------*//
-.p-inputtext {
-    background: var(--input-bg);
-    color: var(--input-text-color);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-
-    &::placeholder {
-        color: var(--input-placeholder-color);
-    }
-
-    &:hover {
-        border-color: var(--input-hover-border);
-    }
-
-    &:focus {
-        border-color: var(--input-focus-border);
-        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-    }
-
-    &:disabled {
-        background: #2a3441;
-        color: #666;
-        border-color: #444;
-    }
-}
-
-// Textarea Dark Mode
+//*------------------------------ Input Components ------------------------------*//
+.p-inputtext,
 .p-inputtextarea {
-    background: var(--input-bg);
-    color: var(--input-text-color);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
     &::placeholder {
-        color: var(--input-placeholder-color);
+        color: #888888;
     }
 
     &:hover {
-        border-color: var(--input-hover-border);
+        border-color: #475569;
     }
 
     &:focus {
-        border-color: var(--input-focus-border);
-        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-    }
-
-    &:disabled {
-        background: #2a3441;
-        color: #666;
-        border-color: #444;
+        border-color: #e74c3c;
+        box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
     }
 }
+//*------------------------------ Input Components ------------------------------*//
 
-// Dropdown Dark Mode
+//*------------------------------ Dropdown ------------------------------*//
 .p-dropdown {
-    background: var(--input-bg);
-    color: var(--input-text-color);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-
-    &:hover {
-        border-color: var(--input-hover-border);
-    }
-
-    &:focus {
-        border-color: var(--input-focus-border);
-        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-    }
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
     .p-dropdown-label {
-        color: var(--input-text-color);
+        color: #e0e0e0;
 
         &.p-placeholder {
-            color: var(--input-placeholder-color);
+            color: #888888;
         }
     }
 
     .p-dropdown-trigger {
-        color: var(--input-text-color);
-    }
-
-    &.p-dropdown-clearable .p-dropdown-clear-icon {
-        color: var(--input-text-color);
+        color: #e0e0e0;
     }
 }
 
-// Dropdown Panel Dark Mode
 .p-dropdown-panel {
-    background: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: #1e293b;
+    border-color: #{$borderColor};
 
-    .p-dropdown-items {
-        .p-dropdown-item {
-            color: var(--input-text-color);
-            background: transparent;
+    .p-dropdown-item {
+        color: #e0e0e0;
 
-            &:hover {
-                background: var(--input-hover-border);
-            }
-
-            &.p-highlight {
-                background: $primaryColor;
-                color: $primaryTextColor;
-            }
-
-            &:focus {
-                background: var(--input-hover-border);
-            }
-        }
-    }
-
-    .p-dropdown-filter {
-        background: var(--input-bg);
-        color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-
-        &::placeholder {
-            color: var(--input-placeholder-color);
+        &:hover {
+            background: #475569;
         }
 
-        &:focus {
-            border-color: var(--input-focus-border);
+        &.p-highlight {
+            background: #e74c3c;
+            color: #ffffff;
         }
-    }
-
-    .p-dropdown-empty-message {
-        color: var(--input-placeholder-color);
     }
 }
+//*------------------------------ Dropdown ------------------------------*//
 
-// MultiSelect Dark Mode
+//*------------------------------ MultiSelect ------------------------------*//
 .p-multiselect {
-    background: var(--input-bg);
-    color: var(--input-text-color);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-
-    &:hover {
-        border-color: var(--input-hover-border);
-    }
-
-    &:focus {
-        border-color: var(--input-focus-border);
-        box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-    }
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
     .p-multiselect-label {
-        color: var(--input-text-color);
+        color: #e0e0e0;
 
         &.p-placeholder {
-            color: var(--input-placeholder-color);
+            color: #888888;
         }
-    }
-
-    .p-multiselect-trigger {
-        color: var(--input-text-color);
     }
 
     .p-multiselect-token {
-        background: $primaryColor;
-        color: $primaryTextColor;
-        border-radius: 4px;
-
-        .p-multiselect-token-icon {
-            color: $primaryTextColor;
-        }
+        background: #e74c3c;
+        color: #ffffff;
     }
 }
 
-// MultiSelect Panel Dark Mode
 .p-multiselect-panel {
-    background: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-    .p-multiselect-items {
-        .p-multiselect-item {
-            color: var(--input-text-color);
-            background: transparent;
-
-            &:hover {
-                background: var(--input-hover-border);
-            }
-
-            &.p-highlight {
-                background: $primaryColor;
-                color: $primaryTextColor;
-            }
-        }
-    }
-
-    .p-multiselect-filter-container {
-        .p-multiselect-filter {
-            background: var(--input-bg);
-            color: var(--input-text-color);
-            border: 1px solid var(--input-border);
-
-            &::placeholder {
-                color: var(--input-placeholder-color);
-            }
-        }
-    }
-
-    .p-multiselect-header {
-        background: var(--datatable-header-bg);
-        border-bottom: 1px solid var(--input-border);
-
-        .p-multiselect-close {
-            color: var(--input-text-color);
-        }
-    }
-}
-
-// Calendar/DatePicker Dark Mode
-.p-calendar {
-    .p-inputtext {
-        background: var(--input-bg);
-        color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-    }
-}
-
-.p-datepicker {
-    background: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-    .p-datepicker-header {
-        background: var(--datatable-header-bg);
-        color: var(--input-text-color);
-        border-bottom: 1px solid var(--input-border);
-    }
-
-    .p-datepicker-calendar {
-        td {
-            >span {
-                color: var(--input-text-color);
-
-                &:hover {
-                    background: var(--input-hover-border);
-                }
-
-                &.p-highlight {
-                    background: $primaryColor;
-                    color: $primaryTextColor;
-                }
-            }
-        }
-
-        .p-datepicker-other-month {
-            color: var(--input-placeholder-color);
-        }
-    }
-
-    .p-monthpicker {
-        .p-monthpicker-month {
-            color: var(--input-text-color);
-
-            &:hover {
-                background: var(--input-hover-border);
-            }
-
-            &.p-highlight {
-                background: $primaryColor;
-                color: $primaryTextColor;
-            }
-        }
-    }
-}
-
-// AutoComplete Dark Mode
-.p-autocomplete {
-    .p-autocomplete-input {
-        background: var(--input-bg);
-        color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-
-        &::placeholder {
-            color: var(--input-placeholder-color);
-        }
-    }
-
-    .p-autocomplete-dropdown {
-        background: var(--input-bg);
-        border: 1px solid var(--input-border);
-        border-left: none;
-    }
-}
-
-.p-autocomplete-panel {
-    background: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-    .p-autocomplete-items {
-        .p-autocomplete-item {
-            color: var(--input-text-color);
-
-            &:hover {
-                background: var(--input-hover-border);
-            }
-
-            &.p-highlight {
-                background: $primaryColor;
-                color: $primaryTextColor;
-            }
-        }
-    }
-}
-
-// InputNumber Dark Mode
-.p-inputnumber {
-    .p-inputnumber-input {
-        background: var(--input-bg);
-        color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-    }
-
-    .p-inputnumber-button-group {
-        .p-inputnumber-button {
-            background: var(--datatable-header-bg);
-            color: var(--input-text-color);
-            border: 1px solid var(--input-border);
-
-            &:hover {
-                background: var(--input-hover-border);
-            }
-        }
-    }
-}
-
-// Password Dark Mode
-.p-password {
-    .p-password-input {
-        background: var(--input-bg);
-        color: var(--input-text-color);
-        border: 1px solid var(--input-border);
-
-        &::placeholder {
-            color: var(--input-placeholder-color);
-        }
-    }
-}
-
-.p-password-panel {
-    background: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-    .p-password-meter {
-        .p-password-strength {
-            &.weak {
-                background: #dc3545;
-            }
-
-            &.medium {
-                background: #ffc107;
-            }
-
-            &.strong {
-                background: #28a745;
-            }
-        }
-    }
-}
-
-//*------------------------------ Input ------------------------------*//
-
-
-//*------------------------------ Skeleton ------------------------------*//
-.p-skeleton {
-    background: var(--skeleton-bg);
-    border-radius: 6px;
-
-    // Override the default animation
-    &::after {
-        background: linear-gradient(90deg,
-                transparent,
-                var(--skeleton-animation-bg),
-                transparent);
-        animation: p-skeleton-animation 1.2s ease-in-out infinite;
-    }
-
-    // Different skeleton shapes
-    &.p-skeleton-circle {
-        border-radius: 50%;
-    }
-
-    &.p-skeleton-none {
-        border-radius: 0;
-    }
-}
-
-// Custom skeleton animation for dark mode
-@keyframes p-skeleton-animation {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    50% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-// Skeleton in different contexts (optional variations)
-.p-card .p-skeleton {
-    background: rgba(var(--skeleton-bg), 0.6);
-}
-
-.p-datatable .p-skeleton {
-    background: var(--skeleton-bg);
-    margin: 2px 0;
-}
-
-// Skeleton text variations
-.p-skeleton.p-skeleton-text {
-    height: 1rem;
-
-    &.p-skeleton-sm {
-        height: 0.875rem;
-    }
-
-    &.p-skeleton-lg {
-        height: 1.25rem;
-    }
-
-    &.p-skeleton-xl {
-        height: 1.5rem;
-    }
-}
-
-// Skeleton for specific component contexts
-.p-skeleton-list {
-    .p-skeleton {
-        margin-bottom: 0.5rem;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-// Avatar skeleton
-.p-skeleton.p-skeleton-avatar {
-    width: 2rem;
-    height: 2rem;
-
-    &.p-skeleton-avatar-sm {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    &.p-skeleton-avatar-lg {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    &.p-skeleton-avatar-xl {
-        width: 4rem;
-        height: 4rem;
-    }
-}
-
-// Button skeleton
-.p-skeleton.p-skeleton-button {
-    height: 2.5rem;
-    border-radius: 6px;
-
-    &.p-skeleton-button-sm {
-        height: 2rem;
-    }
-
-    &.p-skeleton-button-lg {
-        height: 3rem;
-    }
-}
-
-//*------------------------------ Skeleton ------------------------------*//
-
-
-//*------------------------------ Stepper ------------------------------*//
-.p-stepper {
-    background: var(--stepper-bg);
-    color: var(--stepper-text-color);
-    border: 1px solid var(--stepper-border);
-    border-radius: 8px;
-
-    // Stepper Header (Navigation)
-    .p-stepper-nav {
-        background: transparent;
-        border: none;
-        padding: 1rem;
-
-        .p-stepper-header {
-            background: transparent;
-            border: none;
-            border-radius: 6px;
-            padding: 0.75rem;
-            margin: 0 0.25rem;
-            transition: all 0.2s;
-            cursor: pointer;
-
-            &:hover {
-                background: rgba(var(--stepper-header-bg), 0.5);
-            }
-
-            // Step number circle
-            .p-stepper-number {
-                background: var(--stepper-number-bg);
-                color: var(--stepper-text-color);
-                border: 2px solid var(--stepper-border);
-                border-radius: 50%;
-                width: 2rem;
-                height: 2rem;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 600;
-                margin-right: 0.75rem;
-                transition: all 0.2s;
-            }
-
-            // Step title
-            .p-stepper-title {
-                color: var(--stepper-text-color);
-                font-weight: 500;
-                margin: 0;
-                transition: color 0.2s;
-            }
-
-            // Active step
-            &.p-highlight {
-                background: rgba(var(--stepper-active-header-bg), 0.1);
-
-                .p-stepper-number {
-                    background: var(--stepper-active-number-bg);
-                    color: var(--stepper-active-text-color);
-                    border-color: var(--stepper-active-number-bg);
-                    box-shadow: 0 0 0 3px rgba(var(--stepper-active-header-bg), 0.2);
-                }
-
-                .p-stepper-title {
-                    color: var(--stepper-active-text-color);
-                    font-weight: 600;
-                }
-            }
-
-            // Completed step
-            &.p-stepper-header-completed {
-                .p-stepper-number {
-                    background: var(--stepper-completed-number-bg);
-                    color: var(--stepper-active-text-color);
-                    border-color: var(--stepper-completed-number-bg);
-                }
-
-                .p-stepper-title {
-                    color: var(--stepper-text-color);
-                }
-
-                // Checkmark icon for completed steps
-                .p-stepper-number::before {
-                    content: '✓';
-                    font-size: 0.875rem;
-                }
-            }
-
-            // Disabled step
-            &:disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
-
-                &:hover {
-                    background: transparent;
-                }
-            }
-        }
-    }
-
-    // Stepper Content Panels
-    .p-stepper-panels {
-        background: var(--stepper-content-bg);
-        border-top: 1px solid var(--stepper-border);
-        padding: 1.5rem;
-
-        .p-stepper-panel {
-            .p-stepper-content {
-                color: var(--stepper-text-color);
-                padding: 0;
-            }
-        }
-    }
-
-    // Horizontal Stepper Connectors
-    &.p-stepper-horizontal {
-        .p-stepper-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background: var(--stepper-connector-color);
-                z-index: 0;
-                transform: translateY(-50%);
-                margin: 0 4rem;
-            }
-
-            .p-stepper-header {
-                position: relative;
-                z-index: 1;
-                background: var(--stepper-bg);
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                &.p-highlight,
-                &.p-stepper-header-completed {
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: -2rem;
-                        width: 4rem;
-                        height: 2px;
-                        background: var(--stepper-active-connector-color);
-                        z-index: 0;
-                        transform: translateY(-50%);
-                    }
-
-                    &:first-child::before {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-
-    // Vertical Stepper
-    &.p-stepper-vertical {
-        .p-stepper-nav {
-            flex-direction: column;
-            align-items: flex-start;
-
-            .p-stepper-header {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                position: relative;
-                padding-left: 0;
-
-                &:not(:last-child)::after {
-                    content: '';
-                    position: absolute;
-                    left: 1rem;
-                    top: 2.5rem;
-                    width: 2px;
-                    height: 2rem;
-                    background: var(--stepper-connector-color);
-                }
-
-                &.p-highlight::after,
-                &.p-stepper-header-completed::after {
-                    background: var(--stepper-active-connector-color);
-                }
-            }
-        }
-
-        .p-stepper-panels {
-            border-top: none;
-            border-left: 1px solid var(--stepper-border);
-            margin-left: 1rem;
-        }
-    }
-}
-
-// Stepper Actions (Next/Previous buttons)
-.p-stepper-action {
-    background: var(--stepper-header-bg);
-    color: var(--stepper-text-color);
-    border: 1px solid var(--stepper-border);
-    border-radius: 6px;
-    padding: 0.75rem 1.5rem;
-    margin: 0.5rem 0.25rem;
-    transition: all 0.2s;
-    cursor: pointer;
-
-    &:hover {
-        background: var(--stepper-active-header-bg);
-        color: var(--stepper-active-text-color);
-        border-color: var(--stepper-active-header-bg);
-    }
-
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
+    background: #1e293b;
+    border-color: #{$borderColor};
+
+    .p-multiselect-item {
+        color: #e0e0e0;
 
         &:hover {
-            background: var(--stepper-header-bg);
-            color: var(--stepper-text-color);
-            border-color: var(--stepper-border);
+            background: #475569;
         }
-    }
-
-    &.p-stepper-action-primary {
-        background: var(--stepper-active-header-bg);
-        color: var(--stepper-active-text-color);
-        border-color: var(--stepper-active-header-bg);
-
-        &:hover {
-            background: var(--stepper-completed-header-bg);
-            border-color: var(--stepper-completed-header-bg);
-        }
-    }
-}
-
-// Steps component (alternative stepper)
-.p-steps {
-    .p-steps-item {
-        .p-menuitem-link {
-            background: transparent;
-            border: none;
-            color: var(--stepper-text-color);
-
-            .p-steps-number {
-                background: var(--stepper-number-bg);
-                color: var(--stepper-text-color);
-                border: 2px solid var(--stepper-border);
-            }
-
-            .p-steps-title {
-                color: var(--stepper-text-color);
-            }
-        }
-
-        &.p-highlight .p-menuitem-link {
-            .p-steps-number {
-                background: var(--stepper-active-number-bg);
-                color: var(--stepper-active-text-color);
-                border-color: var(--stepper-active-number-bg);
-            }
-
-            .p-steps-title {
-                color: var(--stepper-active-text-color);
-            }
-        }
-
-        &.p-disabled .p-menuitem-link {
-            opacity: 0.5;
-        }
-    }
-}
-
-//*------------------------------ Stepper ------------------------------*//
-
-
-//*------------------------------ File Upload ------------------------------*//
-.p-fileupload {
-    background: var(--fileupload-bg);
-    border: 1px solid var(--fileupload-border);
-    border-radius: 8px;
-    color: var(--fileupload-text-color);
-
-    // FileUpload Header
-    .p-fileupload-buttonbar {
-        background: var(--fileupload-header-bg);
-        border-bottom: 1px solid var(--fileupload-border);
-        border-radius: 8px 8px 0 0;
-        padding: 1rem;
-
-        .p-button {
-            background: var(--fileupload-button-bg);
-            color: #ffffff;
-            border: 1px solid var(--fileupload-button-bg);
-            border-radius: 6px;
-            margin-right: 0.5rem;
-            transition: all 0.2s;
-
-            &:hover {
-                background: var(--fileupload-button-hover-bg);
-                border-color: var(--fileupload-button-hover-bg);
-            }
-
-            &:focus {
-                box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-            }
-
-            &.p-fileupload-choose-button {
-                background: var(--fileupload-button-bg);
-
-                &:hover {
-                    background: var(--fileupload-button-hover-bg);
-                }
-            }
-
-            &.p-fileupload-upload-button {
-                background: #22c55e;
-                border-color: #22c55e;
-
-                &:hover {
-                    background: #16a34a;
-                    border-color: #16a34a;
-                }
-
-                &:disabled {
-                    background: var(--fileupload-progress-bg);
-                    border-color: var(--fileupload-progress-bg);
-                    opacity: 0.6;
-                }
-            }
-
-            &.p-fileupload-cancel-button {
-                background: #dc3545;
-                border-color: #dc3545;
-
-                &:hover {
-                    background: #c82333;
-                    border-color: #c82333;
-                }
-
-                &:disabled {
-                    background: var(--fileupload-progress-bg);
-                    border-color: var(--fileupload-progress-bg);
-                    opacity: 0.6;
-                }
-            }
-        }
-    }
-
-    // FileUpload Content Area
-    .p-fileupload-content {
-        background: var(--fileupload-content-bg);
-        border-radius: 0 0 8px 8px;
-        padding: 1.5rem;
-        color: var(--fileupload-text-color);
-
-        // Drop zone styling
-        &.p-fileupload-highlight {
-            border: 2px dashed var(--fileupload-drag-border);
-            background: var(--fileupload-drag-bg);
-            border-radius: 8px;
-            margin: -1px;
-        }
-
-        // Empty message
-        .p-fileupload-empty {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-color-muted);
-
-            i {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-                color: var(--fileupload-border);
-            }
-        }
-
-        // File list
-        .p-fileupload-files {
-            .p-fileupload-row {
-                background: var(--fileupload-file-bg);
-                border: 1px solid var(--fileupload-border);
-                border-radius: 6px;
-                margin-bottom: 0.5rem;
-                padding: 1rem;
-                display: flex;
-                align-items: center;
-                transition: all 0.2s;
-
-                &:hover {
-                    background: var(--fileupload-file-hover-bg);
-                }
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-                // File info
-                >div {
-                    color: var(--fileupload-text-color);
-
-                    &:first-child {
-                        flex: 1;
-
-                        .p-fileupload-filename {
-                            font-weight: 600;
-                            margin-bottom: 0.25rem;
-                        }
-
-                        .p-fileupload-filesize {
-                            color: var(--text-color-secondary);
-                            font-size: 0.875rem;
-                        }
-                    }
-                }
-
-                // Remove button
-                .p-fileupload-remove {
-                    background: #dc3545;
-                    color: #ffffff;
-                    border: 1px solid #dc3545;
-                    border-radius: 50%;
-                    width: 2rem;
-                    height: 2rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: all 0.2s;
-                    margin-left: 1rem;
-
-                    &:hover {
-                        background: #c82333;
-                        border-color: #c82333;
-                    }
-                }
-            }
-        }
-    }
-
-    // Progress Bar
-    .p-progressbar {
-        background: var(--fileupload-progress-bg);
-        border: 1px solid var(--fileupload-border);
-        border-radius: 6px;
-        height: 0.5rem;
-        overflow: hidden;
-        margin: 1rem 0;
-
-        .p-progressbar-value {
-            background: var(--fileupload-progress-value-bg);
-            border-radius: 6px;
-            transition: width 0.3s;
-        }
-
-        .p-progressbar-label {
-            color: var(--fileupload-text-color);
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-    }
-}
-
-// Basic FileUpload (without UI)
-.p-fileupload-basic {
-    .p-button {
-        background: var(--fileupload-button-bg);
-        color: #ffffff;
-        border: 1px solid var(--fileupload-button-bg);
-        border-radius: 6px;
-        padding: 0.75rem 1.5rem;
-        transition: all 0.2s;
-
-        &:hover {
-            background: var(--fileupload-button-hover-bg);
-            border-color: var(--fileupload-button-hover-bg);
-        }
-
-        &:focus {
-            box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-        }
-    }
-
-    .p-fileupload-files {
-        margin-top: 1rem;
-
-        .p-fileupload-file {
-            background: var(--fileupload-file-bg);
-            border: 1px solid var(--fileupload-border);
-            border-radius: 6px;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--fileupload-text-color);
-
-            &:hover {
-                background: var(--fileupload-file-hover-bg);
-            }
-
-            .p-fileupload-file-name {
-                font-weight: 600;
-            }
-
-            .p-fileupload-file-size {
-                color: var(--text-color-secondary);
-                font-size: 0.875rem;
-                margin-left: 0.5rem;
-            }
-
-            .p-fileupload-remove {
-                background: #dc3545;
-                color: #ffffff;
-                border: none;
-                border-radius: 50%;
-                width: 1.5rem;
-                height: 1.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.2s;
-
-                &:hover {
-                    background: #c82333;
-                }
-            }
-        }
-    }
-}
-
-// Upload message styling
-.p-fileupload-choose-button input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-// Drag and drop overlay
-.p-fileupload-drag-highlight {
-    position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--fileupload-drag-bg);
-        border: 2px dashed var(--fileupload-drag-border);
-        border-radius: 8px;
-        z-index: 1000;
-    }
-
-    &::after {
-        content: 'Drop files here';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: var(--fileupload-drag-border);
-        font-size: 1.1rem;
-        font-weight: 600;
-        z-index: 1001;
-        pointer-events: none;
-    }
-}
-
-// File type icons (optional enhancement)
-.p-fileupload-file-icon {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.75rem;
-    color: #ffffff;
-    font-size: 0.875rem;
-    font-weight: 600;
-
-    &.file-pdf {
-        background: #dc3545;
-    }
-
-    &.file-doc,
-    &.file-docx {
-        background: #2b77c9;
-    }
-
-    &.file-xls,
-    &.file-xlsx {
-        background: #22c55e;
-    }
-
-    &.file-ppt,
-    &.file-pptx {
-        background: #f59e0b;
-    }
-
-    &.file-img {
-        background: #8b5cf6;
-    }
-
-    &.file-default {
-        background: var(--fileupload-progress-bg);
-    }
-}
-
-//*------------------------------ File Upload ------------------------------*//
-
-
-//*------------------------------ Fieldset ------------------------------*//
-.p-fieldset {
-    background: var(--fieldset-bg);
-    border: 1px solid var(--fieldset-border);
-    border-radius: 8px;
-    color: var(--fieldset-text-color);
-    margin-bottom: 1rem;
-
-    // Fieldset Legend/Header
-    .p-fieldset-legend {
-        background: var(--fieldset-header-bg);
-        color: var(--fieldset-legend-color);
-        border: 1px solid var(--fieldset-border);
-        border-radius: 8px 8px 0 0;
-        padding: 1rem 1.25rem;
-        margin: 0;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.2s;
-        cursor: default;
-
-        // Toggleable fieldset legend
-        &.p-fieldset-toggleable {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            user-select: none;
-
-            &:hover {
-                background: var(--fieldset-toggle-hover-color);
-                color: #ffffff;
-            }
-
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 0 2px rgba($primaryColor, 0.2);
-            }
-
-            // Toggle icon
-            .p-fieldset-toggler {
-                color: var(--fieldset-toggle-color);
-                font-size: 0.875rem;
-                transition: all 0.2s;
-                margin-left: 0.5rem;
-
-                &:hover {
-                    color: #ffffff;
-                }
-            }
-
-            &:hover .p-fieldset-toggler {
-                color: #ffffff;
-            }
-        }
-
-        // Legend text
-        .p-fieldset-legend-text {
-            flex: 1;
-        }
-    }
-
-    // Fieldset Content
-    .p-fieldset-content {
-        background: var(--fieldset-content-bg);
-        color: var(--fieldset-text-color);
-        padding: 1.5rem;
-        border-radius: 0 0 8px 8px;
-        border-top: none;
-
-        // Animation for toggle
-        &.p-fieldset-content-wrapper {
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
-        }
-    }
-
-    // Collapsed state
-    &.p-fieldset-collapsed {
-        .p-fieldset-legend {
-            border-radius: 8px;
-            border-bottom: 1px solid var(--fieldset-border);
-        }
-
-        .p-fieldset-content {
-            display: none;
-        }
-    }
-
-    // Non-toggleable fieldset
-    &:not(.p-fieldset-toggleable) {
-        .p-fieldset-legend {
-            cursor: default;
-            border-radius: 8px 8px 0 0;
-        }
-    }
-
-    // Fieldset without legend
-    &.p-fieldset-no-legend {
-        .p-fieldset-content {
-            border-radius: 8px;
-            border: 1px solid var(--fieldset-border);
-        }
-    }
-
-    // Nested fieldsets
-    .p-fieldset {
-        margin-bottom: 1rem;
-        border-color: rgba(var(--fieldset-border), 0.7);
-
-        .p-fieldset-legend {
-            background: rgba(var(--fieldset-header-bg), 0.8);
-            font-size: 0.9rem;
-            padding: 0.75rem 1rem;
-        }
-
-        .p-fieldset-content {
-            padding: 1rem;
-        }
-    }
-}
-
-// Alternative fieldset styling (flat design)
-.p-fieldset.p-fieldset-flat {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-
-    .p-fieldset-legend {
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid var(--fieldset-border);
-        border-radius: 0;
-        padding: 0.75rem 0;
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--fieldset-legend-color);
-
-        &.p-fieldset-toggleable:hover {
-            background: transparent;
-            border-bottom-color: var(--fieldset-toggle-hover-color);
-            color: var(--fieldset-toggle-hover-color);
-        }
-    }
-
-    .p-fieldset-content {
-        background: transparent;
-        padding: 0;
-        border: none;
-        border-radius: 0;
-    }
-}
-
-// Fieldset with icons in legend
-.p-fieldset-legend-icon {
-    margin-right: 0.5rem;
-    color: var(--fieldset-toggle-color);
-    transition: color 0.2s;
-
-    .p-fieldset-toggleable:hover & {
-        color: #ffffff;
-    }
-}
-
-// Custom fieldset variants
-.p-fieldset.p-fieldset-primary {
-    border-color: $primaryColor;
-
-    .p-fieldset-legend {
-        background: $primaryColor;
-        color: #ffffff;
-        border-color: $primaryColor;
-
-        &.p-fieldset-toggleable:hover {
-            background: darken($primaryColor, 10%);
-        }
-    }
-}
-
-.p-fieldset.p-fieldset-success {
-    border-color: #22c55e;
-
-    .p-fieldset-legend {
-        background: #22c55e;
-        color: #ffffff;
-        border-color: #22c55e;
-
-        &.p-fieldset-toggleable:hover {
-            background: #16a34a;
-        }
-    }
-}
-
-.p-fieldset.p-fieldset-warning {
-    border-color: #f59e0b;
-
-    .p-fieldset-legend {
-        background: #f59e0b;
-        color: #ffffff;
-        border-color: #f59e0b;
-
-        &.p-fieldset-toggleable:hover {
-            background: #d97706;
-        }
-    }
-}
-
-.p-fieldset.p-fieldset-danger {
-    border-color: #dc3545;
-
-    .p-fieldset-legend {
-        background: #dc3545;
-        color: #ffffff;
-        border-color: #dc3545;
-
-        &.p-fieldset-toggleable:hover {
-            background: #c82333;
-        }
-    }
-}
-
-//*------------------------------ Fieldset ------------------------------*//
-
-
-//*------------------------------ Tabs ------------------------------*//
-.p-tabview {
-    background: var(--tabs-bg);
-    color: var(--tabs-text-color);
-
-    // Tab Navigation
-    .p-tabview-nav {
-        background: var(--tabs-nav-bg);
-        border-bottom: 1px solid var(--tabs-border);
-        border-radius: 8px 8px 0 0;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        list-style: none;
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        // Individual tab header
-        .p-tabview-nav-link {
-            background: transparent;
-            color: var(--tabs-text-color);
-            border: none;
-            border-bottom: 3px solid transparent;
-            padding: 1rem 1.5rem;
-            margin: 0;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            font-weight: 500;
-
-            &:hover {
-                background: var(--tabs-hover-bg);
-                color: var(--tabs-active-text-color);
-            }
-
-            &:focus {
-                outline: none;
-                box-shadow: inset 0 0 0 2px rgba($primaryColor, 0.2);
-            }
-
-            // Tab icon
-            .p-tabview-nav-icon {
-                margin-right: 0.5rem;
-                color: inherit;
-            }
-
-            // Tab title
-            .p-tabview-title {
-                color: inherit;
-                font-weight: inherit;
-            }
-        }
-
-        // Active tab
-        .p-tabview-nav-link.p-highlight {
-            background: $highlightBg;
-            color: $highlightTextColor;
-            border-bottom-color: var(--tabs-active-indicator);
-            font-weight: 600;
-
-            &:hover {
-                background: $highlightBg;
-                color: $highlightTextColor;
-            }
-        }
-
-        // Disabled tab
-        .p-tabview-nav-link:disabled,
-        .p-tabview-nav-link.p-disabled {
-            color: var(--tabs-disabled-color);
-            cursor: not-allowed;
-            opacity: 0.6;
-
-            &:hover {
-                background: transparent;
-                color: var(--tabs-disabled-color);
-            }
-        }
-
-        // First tab
-        .p-tabview-nav-link:first-child {
-            border-top-left-radius: 8px;
-        }
-
-        // Last tab
-        .p-tabview-nav-link:last-child {
-            border-top-right-radius: 8px;
-        }
-    }
-
-    // Tab Content Panels
-    .p-tabview-panels {
-        background: var(--tabs-content-bg);
-        border: 1px solid var(--tabs-border);
-        border-top: none;
-        border-radius: 0 0 8px 8px;
-        color: var(--tabs-text-color);
-
-        .p-tabview-panel {
-            padding: 1.5rem;
-
-            &.p-hidden {
-                display: none;
-            }
-        }
-    }
-
-    // Scrollable tabs navigation
-    &.p-tabview-scrollable {
-        .p-tabview-nav-container {
-            position: relative;
-
-            .p-tabview-nav-prev,
-            .p-tabview-nav-next {
-                background: var(--tabs-nav-bg);
-                color: var(--tabs-text-color);
-                border: 1px solid var(--tabs-border);
-                width: 2.5rem;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.2s;
-
-                &:hover {
-                    background: var(--tabs-hover-bg);
-                    color: var(--tabs-active-text-color);
-                }
-
-                &:disabled {
-                    color: var(--tabs-disabled-color);
-                    cursor: not-allowed;
-                    opacity: 0.6;
-
-                    &:hover {
-                        background: var(--tabs-nav-bg);
-                        color: var(--tabs-disabled-color);
-                    }
-                }
-            }
-
-            .p-tabview-nav-prev {
-                border-right: none;
-                border-radius: 8px 0 0 0;
-            }
-
-            .p-tabview-nav-next {
-                border-left: none;
-                border-radius: 0 8px 0 0;
-            }
-        }
-    }
-}
-
-// TabMenu Dark Mode (alternative tab component)
-.p-tabmenu {
-    .p-tabmenu-nav {
-        background: var(--tabs-nav-bg);
-        border: 1px solid var(--tabs-border);
-        border-radius: 8px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: flex;
-        overflow-x: auto;
-
-        .p-tabmenuitem {
-            .p-menuitem-link {
-                background: transparent;
-                color: var(--tabs-text-color);
-                border: none;
-                border-bottom: 3px solid transparent;
-                padding: 1rem 1.5rem;
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                transition: all 0.2s;
-                cursor: pointer;
-                font-weight: 500;
-
-                &:hover {
-                    background: var(--tabs-hover-bg);
-                    color: var(--tabs-active-text-color);
-                }
-
-                &:focus {
-                    outline: none;
-                    box-shadow: inset 0 0 0 2px rgba($primaryColor, 0.2);
-                }
-
-                .p-menuitem-icon {
-                    margin-right: 0.5rem;
-                    color: inherit;
-                }
-
-                .p-menuitem-text {
-                    color: inherit;
-                    font-weight: inherit;
-                }
-            }
-
-            &.p-highlight .p-menuitem-link {
-                background: $highlightBg;
-                color: $highlightTextColor;
-                border-bottom-color: var(--tabs-active-indicator);
-                font-weight: 600;
-
-                &:hover {
-                    background: $highlightBg;
-                    color: $highlightTextColor;
-                }
-            }
-
-            &.p-disabled .p-menuitem-link {
-                color: var(--tabs-disabled-color);
-                cursor: not-allowed;
-                opacity: 0.6;
-
-                &:hover {
-                    background: transparent;
-                    color: var(--tabs-disabled-color);
-                }
-            }
-
-            &:first-child .p-menuitem-link {
-                border-radius: 8px 0 0 8px;
-            }
-
-            &:last-child .p-menuitem-link {
-                border-radius: 0 8px 8px 0;
-            }
-        }
-    }
-}
-
-// Vertical TabView
-.p-tabview.p-tabview-vertical {
-    display: flex;
-
-    .p-tabview-nav {
-        flex-direction: column;
-        border-right: 1px solid var(--tabs-border);
-        border-bottom: none;
-        border-radius: 8px 0 0 8px;
-        min-width: 12rem;
-
-        .p-tabview-nav-link {
-            border-bottom: none;
-            border-right: 3px solid transparent;
-            justify-content: flex-start;
-
-            &.p-highlight {
-                border-right-color: var(--tabs-active-indicator);
-                border-bottom: none;
-            }
-        }
-
-        .p-tabview-nav-link:first-child {
-            border-radius: 8px 0 0 0;
-        }
-
-        .p-tabview-nav-link:last-child {
-            border-radius: 0 0 0 8px;
-        }
-    }
-
-    .p-tabview-panels {
-        border-left: none;
-        border-radius: 0 8px 8px 0;
-        flex: 1;
-    }
-}
-
-// Tab close button
-.p-tabview-close {
-    background: transparent;
-    color: var(--tabs-text-color);
-    border: none;
-    border-radius: 50%;
-    width: 1.25rem;
-    height: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: 0.7;
-
-    &:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--tabs-active-text-color);
-        opacity: 1;
-    }
-
-    .p-highlight & {
-        color: $highlightTextColor;
-    }
-}
-
-// Custom tab variants
-.p-tabview.p-tabview-top {
-    .p-tabview-nav .p-tabview-nav-link {
-        border-bottom: 3px solid transparent;
-        border-top: none;
 
         &.p-highlight {
-            border-bottom-color: var(--tabs-active-indicator);
+            background: #e74c3c;
+            color: #ffffff;
         }
     }
 }
-
-.p-tabview.p-tabview-bottom {
-    flex-direction: column-reverse;
-
-    .p-tabview-nav {
-        border-top: 1px solid var(--tabs-border);
-        border-bottom: none;
-        border-radius: 0 0 8px 8px;
-
-        .p-tabview-nav-link {
-            border-top: 3px solid transparent;
-            border-bottom: none;
-
-            &.p-highlight {
-                border-top-color: var(--tabs-active-indicator);
-            }
-        }
-    }
-
-    .p-tabview-panels {
-        border-bottom: none;
-        border-radius: 8px 8px 0 0;
-    }
-}
-
-.p-tabview.p-tabview-left {
-    .p-tabview-nav {
-        border-right: 1px solid var(--tabs-border);
-        border-bottom: none;
-
-        .p-tabview-nav-link {
-            border-right: 3px solid transparent;
-            border-bottom: none;
-
-            &.p-highlight {
-                border-right-color: var(--tabs-active-indicator);
-            }
-        }
-    }
-}
-
-.p-tabview.p-tabview-right {
-    flex-direction: row-reverse;
-
-    .p-tabview-nav {
-        border-left: 1px solid var(--tabs-border);
-        border-right: none;
-        border-radius: 0 8px 8px 0;
-
-        .p-tabview-nav-link {
-            border-left: 3px solid transparent;
-            border-right: none;
-
-            &.p-highlight {
-                border-left-color: var(--tabs-active-indicator);
-            }
-        }
-    }
-
-    .p-tabview-panels {
-        border-right: none;
-        border-radius: 8px 0 0 8px;
-    }
-}
-
-//*------------------------------ Tabs ------------------------------*//
-
-
+//*------------------------------ MultiSelect ------------------------------*//
 
 //*------------------------------ Dialog ------------------------------*//
 .p-dialog {
-    background: var(--dialog-bg);
-    color: var(--dialog-text-color);
-    border: 1px solid var(--dialog-border);
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
-    // Dialog Header
     .p-dialog-header {
-        background: var(--dialog-header-bg);
-        color: var(--dialog-header-text-color);
-        border-bottom: 1px solid var(--dialog-border);
-        border-radius: 8px 8px 0 0;
-        padding: 1rem 1.5rem;
-
-        .p-dialog-title {
-            color: var(--dialog-header-text-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        .p-dialog-header-icons {
-            .p-dialog-header-icon {
-                background: transparent;
-                color: var(--dialog-header-text-color);
-                border: 1px solid transparent;
-                border-radius: 4px;
-                width: 2rem;
-                height: 2rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.2s;
-                margin-left: 0.5rem;
-
-                &:hover {
-                    background: rgba(255, 255, 255, 0.1);
-                    color: #ffffff;
-                }
-
-                &:focus {
-                    border-color: rgba(255, 255, 255, 0.3);
-                    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-                }
-            }
-        }
+        background: #334155;
+        color: #ffffff;
+        border-color: #{$borderColor};
     }
 
-    // Dialog Content
     .p-dialog-content {
-        background: var(--dialog-content-bg);
-        color: var(--dialog-text-color);
-        padding: 1.5rem;
-        border: none;
+        background: #1e293b;
+        color: #e0e0e0;
     }
 
-    // Dialog Footer
     .p-dialog-footer {
-        background: var(--dialog-footer-bg);
-        border-top: 1px solid var(--dialog-border);
-        border-radius: 0 0 8px 8px;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 0.5rem;
-
-        .p-button {
-            margin: 0;
-        }
+        background: #334155;
+        border-color: #{$borderColor};
     }
 }
 
-// Dialog Mask/Overlay
 .p-dialog-mask {
-    background: var(--dialog-mask-bg);
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.6);
 }
-
-// Maximized Dialog
-.p-dialog.p-dialog-maximized {
-    border-radius: 0;
-
-    .p-dialog-header {
-        border-radius: 0;
-    }
-
-    .p-dialog-footer {
-        border-radius: 0;
-    }
-}
-
-// Dialog without Header
-.p-dialog:not(:has(.p-dialog-header)) {
-    .p-dialog-content {
-        border-radius: 8px 8px 0 0;
-    }
-}
-
-// Dialog without Footer
-.p-dialog:not(:has(.p-dialog-footer)) {
-    .p-dialog-content {
-        border-radius: 0 0 8px 8px;
-    }
-}
-
-// Dialog with only Content
-.p-dialog:not(:has(.p-dialog-header)):not(:has(.p-dialog-footer)) {
-    .p-dialog-content {
-        border-radius: 8px;
-    }
-}
-
 //*------------------------------ Dialog ------------------------------*//
 
 //*------------------------------ Card ------------------------------*//
 .p-card {
-    background: var(--card-bg);
-    color: var(--card-text-color);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: all 0.2s;
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
 
-    &:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        transform: translateY(-2px);
-    }
-
-    // Card Header
     .p-card-header {
-        background: var(--card-header-bg);
-        color: var(--card-header-text-color);
-        border-bottom: 1px solid var(--card-border);
-        padding: 1rem 1.5rem;
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 0;
-        }
+        background: #334155;
+        color: #ffffff;
+        border-color: #{$borderColor};
     }
 
-    // Card Body
-    .p-card-body {
-        background: var(--card-content-bg);
-        color: var(--card-text-color);
-        padding: 0;
-
-        // Card Title
-        .p-card-title {
-            color: var(--card-title-color);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0 0 0.5rem 0;
-            padding: 1.5rem 1.5rem 0 1.5rem;
-        }
-
-        // Card Subtitle
-        .p-card-subtitle {
-            color: var(--card-subtitle-color);
-            font-size: 0.9rem;
-            font-weight: 400;
-            margin: 0 0 1rem 0;
-            padding: 0 1.5rem;
-        }
-
-        // Card Content
-        .p-card-content {
-            color: var(--card-text-color);
-            padding: 1.5rem;
-            line-height: 1.6;
-
-            p {
-                margin: 0 0 1rem 0;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-
-        // Card Footer
-        .p-card-footer {
-            background: var(--card-footer-bg);
-            color: var(--card-header-text-color);
-            border-top: 1px solid var(--card-border);
-            padding: 1rem 1.5rem;
-            margin-top: auto;
-
-            .p-button {
-                margin-right: 0.5rem;
-                margin-bottom: 0.5rem;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
+    .p-card-title {
+        color: #ffffff;
     }
 
-    // Card with only content (no title/subtitle)
-    &:not(:has(.p-card-title)):not(:has(.p-card-subtitle)) {
-        .p-card-content {
-            padding: 1.5rem;
-        }
+    .p-card-subtitle {
+        color: #b0b0b0;
     }
 
-    // Card without header
-    &:not(:has(.p-card-header)) {
-        .p-card-title {
-            padding-top: 1.5rem;
-        }
-    }
-
-    // Card without footer
-    &:not(:has(.p-card-footer)) {
-        .p-card-content {
-            padding-bottom: 1.5rem;
-        }
+    .p-card-footer {
+        background: #334155;
+        color: #ffffff;
+        border-color: #{$borderColor};
     }
 }
-
-// Card variations
-.p-card.p-card-outlined {
-    border: 2px solid var(--card-border);
-    box-shadow: none;
-
-    &:hover {
-        border-color: $primaryColor;
-        box-shadow: 0 0 0 2px rgba($primaryColor, 0.1);
-    }
-}
-
-.p-card.p-card-elevated {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-
-    &:hover {
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-        transform: translateY(-4px);
-    }
-}
-
-.p-card.p-card-flat {
-    box-shadow: none;
-    border: none;
-
-    &:hover {
-        box-shadow: none;
-        transform: none;
-    }
-}
-
-// Card with image
-.p-card.p-card-image {
-    .p-card-header {
-        padding: 0;
-        border: none;
-
-        img {
-            display: block;
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-    }
-
-    .p-card-body {
-        .p-card-title {
-            padding-top: 1.5rem;
-        }
-    }
-}
-
-// Compact card
-.p-card.p-card-compact {
-    .p-card-header {
-        padding: 0.75rem 1rem;
-    }
-
-    .p-card-body {
-        .p-card-title {
-            font-size: 1.1rem;
-            padding: 1rem 1rem 0 1rem;
-        }
-
-        .p-card-subtitle {
-            font-size: 0.85rem;
-            padding: 0 1rem;
-        }
-
-        .p-card-content {
-            padding: 1rem;
-        }
-
-        .p-card-footer {
-            padding: 0.75rem 1rem;
-        }
-    }
-}
-
-// Card in grid/flex layouts
-.p-card.p-card-flex {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-    .p-card-body {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-
-        .p-card-content {
-            flex: 1;
-        }
-
-        .p-card-footer {
-            margin-top: auto;
-        }
-    }
-}
-
-// Card with actions
-.p-card-actions {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid var(--card-border);
-    background: var(--card-footer-bg);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.5rem;
-
-    &.p-card-actions-left {
-        justify-content: flex-start;
-    }
-
-    &.p-card-actions-center {
-        justify-content: center;
-    }
-
-    &.p-card-actions-between {
-        justify-content: space-between;
-    }
-}
-
-// Card loading state
-.p-card.p-card-loading {
-    .p-card-content {
-        position: relative;
-        min-height: 100px;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(var(--card-bg), 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-    }
-}
-
 //*------------------------------ Card ------------------------------*//
 
-
-
-//*------------------------------ Scrollbar ------------------------------*//
-// Simple Scrollbar Dark Mode that actually works
-
-// Global scrollbar styling for Webkit browsers
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #{$borderColor} #1e293b;
-}
-
-// Webkit scrollbar styling
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
+//*------------------------------ Tabs ------------------------------*//
+.p-tabview {
     background: #1e293b;
-}
+    color: #e0e0e0;
 
-::-webkit-scrollbar-thumb {
-    background: #{$borderColor};
-    border-radius: 4px;
-}
+    .p-tabview-nav {
+        background: #334155;
+        border-color: #{$borderColor};
 
-::-webkit-scrollbar-thumb:hover {
-    background: #475569;
-}
+        .p-tabview-nav-link {
+            background: transparent;
+            color: #e0e0e0;
+            border-color: transparent;
 
-::-webkit-scrollbar-corner {
+            &:hover {
+                background: #475569;
+                color: #ffffff;
+            }
+
+            &.p-highlight {
+                background: #1a0f0f;
+                color: #d0d0d0;
+                border-color: #e74c3c;
+            }
+        }
+    }
+
+    .p-tabview-panels {
+        background: #1e293b;
+        border-color: #{$borderColor};
+        color: #e0e0e0;
+    }
+}
+//*------------------------------ Tabs ------------------------------*//
+
+//*------------------------------ Fieldset ------------------------------*//
+.p-fieldset {
     background: #1e293b;
+    border-color: #{$borderColor};
+    color: #e0e0e0;
+
+    .p-fieldset-legend {
+        background: #334155;
+        color: #ffffff;
+        border-color: #{$borderColor};
+
+        &.p-fieldset-toggleable:hover {
+            background: #e74c3c;
+            color: #ffffff;
+        }
+    }
+
+    .p-fieldset-content {
+        background: #1e293b;
+        color: #e0e0e0;
+    }
 }
+//*------------------------------ Fieldset ------------------------------*//
 
-// For specific containers that need different styling
-.p-datatable-wrapper::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+//*------------------------------ FileUpload ------------------------------*//
+.p-fileupload {
+    background: #1e293b;
+    border-color: #{$borderColor};
+    color: #e0e0e0;
+
+    .p-fileupload-buttonbar {
+        background: #334155;
+        border-color: #{$borderColor};
+
+        .p-button {
+            background: #e74c3c;
+            color: #ffffff;
+            border-color: #e74c3c;
+
+            &:hover {
+                background: #c0392b;
+                border-color: #c0392b;
+            }
+        }
+    }
+
+    .p-fileupload-content {
+        background: #1e293b;
+        color: #e0e0e0;
+    }
 }
-
-.p-datatable-wrapper::-webkit-scrollbar-thumb {
-    background: #{$borderColor};
-    border-radius: 5px;
-}
-
-.p-datatable-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #475569;
-}
-
-.p-dropdown-panel::-webkit-scrollbar,
-.p-multiselect-panel::-webkit-scrollbar {
-    width: 6px;
-}
-
-.p-dropdown-panel::-webkit-scrollbar-thumb,
-.p-multiselect-panel::-webkit-scrollbar-thumb {
-    background: #{$borderColor};
-    border-radius: 3px;
-}
-
-.p-dropdown-panel::-webkit-scrollbar-thumb:hover,
-.p-multiselect-panel::-webkit-scrollbar-thumb:hover {
-    background: #475569;
-}
-
-//*------------------------------ Scrollbar ------------------------------*//
-
+//*------------------------------ FileUpload ------------------------------*//
 
 //*------------------------------ OverlayPanel ------------------------------*//
 .p-overlaypanel {
     background: #1e293b;
     color: #e0e0e0;
-    border: 1px solid #{$borderColor};
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-color: #{$borderColor};
 
-    // Content area
-    .p-overlaypanel-content {
-        color: #e0e0e0;
-    }
-
-    // Close button
     .p-overlaypanel-close {
         color: #e0e0e0;
-        
+
         &:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
         }
     }
 
-    // Text elements
     h1, h2, h3, h4, h5, h6 {
         color: #ffffff;
     }
 
-    p {
-        color: #e0e0e0;
-    }
-
-    // Links
     a {
-        color: #{$primaryColor};
-        
+        color: #e74c3c;
+
         &:hover {
-            color: #{$primaryLightColor};
+            color: #2d3436;
         }
     }
 }
-
 //*------------------------------ OverlayPanel ------------------------------*//
+
+//*------------------------------ Skeleton ------------------------------*//
+.p-skeleton {
+    background: #334155;
+
+    &::after {
+        background: linear-gradient(90deg, transparent, #475569, transparent);
+    }
+}
+//*------------------------------ Skeleton ------------------------------*//
+
+//*------------------------------ Stepper ------------------------------*//
+.p-stepper {
+    background: #1e293b;
+    color: #e0e0e0;
+    border-color: #{$borderColor};
+
+    .p-stepper-number {
+        background: #475569;
+        color: #e0e0e0;
+        border-color: #{$borderColor};
+    }
+
+    .p-stepper-title {
+        color: #e0e0e0;
+    }
+
+    .p-stepper-header.p-highlight {
+        .p-stepper-number {
+            background: #e74c3c;
+            color: #ffffff;
+            border-color: #e74c3c;
+        }
+
+        .p-stepper-title {
+            color: #ffffff;
+        }
+    }
+}
+//*------------------------------ Stepper ------------------------------*//
+
+//*------------------------------ Divider ------------------------------*//
+.p-divider .p-divider-content:before,
+.p-divider .p-divider-content:after {
+    border-color: #{$borderColor};
+}
+//*------------------------------ Divider ------------------------------*//
+
+//*------------------------------ Scrollbar ------------------------------*//
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #{$borderColor};
+
+    &:hover {
+        background: #475569;
+    }
+}
+//*------------------------------ Scrollbar ------------------------------*//
