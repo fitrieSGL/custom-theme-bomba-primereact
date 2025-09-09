@@ -133,6 +133,17 @@ $overlayPanelArrowColor: #1e293b !default;
 
 // leaflet
 $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !default;
+
+// Steps
+$stepsBg: #1e293b !default;
+$stepsNumberBg: #475569 !default;
+$stepsActiveNumberBg: #e74c3c !default;
+$stepsCompletedNumberBg: #22c55e !default;
+$stepsTextColor: #e0e0e0 !default;
+$stepsActiveTextColor: #ffffff !default;
+$stepsDisabledColor: #6b7280 !default;
+$stepsHoverBg: #475569 !default;
+$stepsBorder: #{$borderColor} !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -266,6 +277,17 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
     // Leaflet
     --leaflet-filter-color: #{$leafletFilterColor};
 
+    // Steps
+    --steps-bg: #{$stepsBg};
+    --steps-number-bg: #{$stepsNumberBg};
+    --steps-active-number-bg: #{$stepsActiveNumberBg};
+    --steps-completed-number-bg: #{$stepsCompletedNumberBg};
+    --steps-text-color: #{$stepsTextColor};
+    --steps-active-text-color: #{$stepsActiveTextColor};
+    --steps-disabled-color: #{$stepsDisabledColor};
+    --steps-hover-bg: #{$stepsHoverBg};
+    --steps-border: #{$stepsBorder};
+
 }
 
 
@@ -283,13 +305,13 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         border-color: #{$borderColor};
     }
 
-    .p-datatable-thead > tr > th {
+    .p-datatable-thead>tr>th {
         background: #334155;
         color: #ffffff;
         border-color: #{$borderColor};
     }
 
-    .p-datatable-tbody > tr {
+    .p-datatable-tbody>tr {
         background: #1e293b;
         color: #e0e0e0;
         border-color: #{$borderColor};
@@ -302,7 +324,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
             background: #2d3748 !important;
         }
 
-        > td {
+        >td {
             border-color: #{$borderColor};
         }
     }
@@ -313,6 +335,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         border-color: #{$borderColor};
     }
 }
+
 //*------------------------------ DataTable ------------------------------*//
 
 //*------------------------------ Paginator ------------------------------*//
@@ -340,6 +363,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         }
     }
 }
+
 //*------------------------------ Paginator ------------------------------*//
 
 //*------------------------------ Input Components ------------------------------*//
@@ -362,6 +386,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
     }
 }
+
 //*------------------------------ Input Components ------------------------------*//
 
 //*------------------------------ Dropdown ------------------------------*//
@@ -400,6 +425,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         }
     }
 }
+
 //*------------------------------ Dropdown ------------------------------*//
 
 //*------------------------------ MultiSelect ------------------------------*//
@@ -439,6 +465,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         }
     }
 }
+
 //*------------------------------ MultiSelect ------------------------------*//
 
 //*------------------------------ Dialog ------------------------------*//
@@ -467,6 +494,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
 .p-dialog-mask {
     background: rgba(0, 0, 0, 0.6);
 }
+
 //*------------------------------ Dialog ------------------------------*//
 
 //*------------------------------ Card ------------------------------*//
@@ -495,6 +523,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         border-color: #{$borderColor};
     }
 }
+
 //*------------------------------ Card ------------------------------*//
 
 //*------------------------------ Tabs ------------------------------*//
@@ -530,6 +559,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         color: #e0e0e0;
     }
 }
+
 //*------------------------------ Tabs ------------------------------*//
 
 //*------------------------------ Fieldset ------------------------------*//
@@ -554,6 +584,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         color: #e0e0e0;
     }
 }
+
 //*------------------------------ Fieldset ------------------------------*//
 
 //*------------------------------ FileUpload ------------------------------*//
@@ -583,6 +614,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         color: #e0e0e0;
     }
 }
+
 //*------------------------------ FileUpload ------------------------------*//
 
 //*------------------------------ OverlayPanel ------------------------------*//
@@ -600,7 +632,12 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         }
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         color: #ffffff;
     }
 
@@ -612,6 +649,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         }
     }
 }
+
 //*------------------------------ OverlayPanel ------------------------------*//
 
 //*------------------------------ Skeleton ------------------------------*//
@@ -622,6 +660,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         background: linear-gradient(90deg, transparent, #475569, transparent);
     }
 }
+
 //*------------------------------ Skeleton ------------------------------*//
 
 //*------------------------------ Stepper ------------------------------*//
@@ -652,6 +691,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         }
     }
 }
+
 //*------------------------------ Stepper ------------------------------*//
 
 //*------------------------------ Divider ------------------------------*//
@@ -659,6 +699,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
 .p-divider .p-divider-content:after {
     border-color: #{$borderColor};
 }
+
 //*------------------------------ Divider ------------------------------*//
 
 //*------------------------------ Scrollbar ------------------------------*//
@@ -673,4 +714,81 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
         background: #475569;
     }
 }
+
 //*------------------------------ Scrollbar ------------------------------*//
+
+//*------------------------------ Steps ------------------------------*//
+.p-steps {
+    background: #1e293b;
+    color: #e0e0e0;
+
+    .p-steps-item {
+        .p-menuitem-link {
+            background: transparent;
+            color: #e0e0e0;
+            border-color: transparent;
+
+            // Don't modify .p-steps-number background colors
+            .p-steps-number {
+                color: #e0e0e0;
+                border-color: #{$borderColor};
+            }
+
+            .p-steps-title {
+                color: #e0e0e0;
+            }
+
+            &:hover {
+                background: #475569;
+                color: #ffffff;
+
+                .p-steps-title {
+                    color: #ffffff;
+                }
+                
+                // Don't change number background on hover
+                .p-steps-number {
+                    color: #ffffff;
+                }
+            }
+        }
+
+        &.p-highlight .p-menuitem-link {
+            // Don't modify .p-steps-number background for active state
+            .p-steps-number {
+                color: #ffffff;
+                border-color: transparent;
+            }
+
+            .p-steps-title {
+                color: #ffffff;
+            }
+        }
+
+        &.p-steps-current .p-menuitem-link {
+            // Don't modify .p-steps-number background for current state
+            .p-steps-number {
+                color: #ffffff;
+                border-color: transparent;
+            }
+
+            .p-steps-title {
+                color: #e74c3c;
+            }
+        }
+
+        &.p-disabled .p-menuitem-link {
+            color: #6b7280;
+
+            .p-steps-number {
+                color: #6b7280;
+                border-color: #444;
+            }
+
+            .p-steps-title {
+                color: #6b7280;
+            }
+        }
+    }
+}
+//*------------------------------ Steps ------------------------------*//
