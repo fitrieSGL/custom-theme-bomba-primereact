@@ -114,10 +114,10 @@ $dialogHeaderTextColor: #ffffff !default;
 $dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
 
 // Card
-$cardBg: #1e293b !default;
-$cardHeaderBg: #334155 !default;
-$cardContentBg: #1e293b !default;
-$cardFooterBg: #334155 !default;
+$cardBg: #{$customCardColorOne} !default;
+$cardHeaderBg: #{$customCardColorOne} !default;
+$cardContentBg: #{$customCardColorOne} !default;
+$cardFooterBg: #{$customCardColorOne} !default;
 $cardBorder: #{$borderColor} !default;
 $cardTextColor: #e0e0e0 !default;
 $cardHeaderTextColor: #ffffff !default;
@@ -499,18 +499,18 @@ $stepsBorder: #{$borderColor} !default;
 
 //*------------------------------ Card ------------------------------*//
 .p-card {
-    background: #1e293b;
+    background: #{$cardBg};
     color: #e0e0e0;
     border-color: #{$borderColor};
 
     .p-card-header {
-        background: #334155;
-        color: #ffffff;
+        background: #{$cardHeaderBg};
+        color: #{$cardHeaderTextColor};
         border-color: #{$borderColor};
     }
 
     .p-card-title {
-        color: #ffffff;
+        color: #{$cardHeaderTextColor};
     }
 
     .p-card-subtitle {
@@ -518,8 +518,8 @@ $stepsBorder: #{$borderColor} !default;
     }
 
     .p-card-footer {
-        background: #334155;
-        color: #ffffff;
+        background: #{$cardFooterBg};
+        color: #{$cardHeaderTextColor};
         border-color: #{$borderColor};
     }
 }
@@ -719,7 +719,7 @@ $stepsBorder: #{$borderColor} !default;
 
 //*------------------------------ Steps ------------------------------*//
 .p-steps {
-    background: #1e293b;
+    // background: #{$stepsBg};
     color: #e0e0e0;
 
     .p-steps-item {
