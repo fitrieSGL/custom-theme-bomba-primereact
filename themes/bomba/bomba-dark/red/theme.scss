@@ -144,6 +144,12 @@ $stepsActiveTextColor: #ffffff !default;
 $stepsDisabledColor: #6b7280 !default;
 $stepsHoverBg: #475569 !default;
 $stepsBorder: #{$borderColor} !default;
+
+// Scrollbar
+$scrollbarWidth: 8px !default;
+$scrollbarTrackBg: #1e293b !default;
+$scrollbarThumbBg: #{$borderColor} !default;
+$scrollbarThumbHoverBg: #475569 !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -288,6 +294,11 @@ $stepsBorder: #{$borderColor} !default;
     --steps-hover-bg: #{$stepsHoverBg};
     --steps-border: #{$stepsBorder};
 
+    // Scrollbar
+    --scrollbar-width: #{$scrollbarWidth};
+    --scrollbar-track-bg: #{$scrollbarTrackBg};
+    --scrollbar-thumb-bg: #{$scrollbarThumbBg};
+    --scrollbar-thumb-hover-bg: #{$scrollbarThumbHoverBg};
 }
 
 
@@ -703,18 +714,91 @@ $stepsBorder: #{$borderColor} !default;
 //*------------------------------ Divider ------------------------------*//
 
 //*------------------------------ Scrollbar ------------------------------*//
+// Global scrollbar styling for all browsers
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #{$borderColor} #1e293b;
+}
+
+// Webkit scrollbar styling (Chrome, Safari, Edge)
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
 ::-webkit-scrollbar-track {
     background: #1e293b;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #{$borderColor};
-
-    &:hover {
-        background: #475569;
-    }
+    border-radius: 4px;
+    border: 1px solid #1e293b;
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #64748b;
+}
+
+::-webkit-scrollbar-corner {
+    background: #1e293b;
+}
+
+// Component-specific scrollbars
+.p-datatable-wrapper::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.p-datatable-wrapper::-webkit-scrollbar-thumb {
+    background: #{$borderColor};
+    border-radius: 5px;
+}
+
+.p-datatable-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+.p-dropdown-panel::-webkit-scrollbar,
+.p-multiselect-panel::-webkit-scrollbar,
+.p-autocomplete-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.p-dropdown-panel::-webkit-scrollbar-thumb,
+.p-multiselect-panel::-webkit-scrollbar-thumb,
+.p-autocomplete-panel::-webkit-scrollbar-thumb {
+    background: #{$borderColor};
+    border-radius: 3px;
+}
+
+.p-dropdown-panel::-webkit-scrollbar-thumb:hover,
+.p-multiselect-panel::-webkit-scrollbar-thumb:hover,
+.p-autocomplete-panel::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+.p-dialog::-webkit-scrollbar {
+    width: 8px;
+}
+
+.p-dialog::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.p-dialog::-webkit-scrollbar-thumb {
+    background: #{$borderColor};
+    border-radius: 4px;
+}
+
+.p-dialog::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
 //*------------------------------ Scrollbar ------------------------------*//
 
 //*------------------------------ Steps ------------------------------*//
