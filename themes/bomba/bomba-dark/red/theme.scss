@@ -340,6 +340,13 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
     }
 
+    .p-datatable-tfoot>tr>td {
+        background: #334155 !important;
+        color: #ffffff !important;
+        border-color: #{$borderColor};
+        font-weight: bold;
+    }
+
     .p-datatable-footer {
         background: #334155;
         color: #ffffff;
@@ -706,6 +713,39 @@ $scrollbarThumbHoverBg: #475569 !default;
 //*------------------------------ Stepper ------------------------------*//
 
 //*------------------------------ Divider ------------------------------*//
+.p-divider {
+    &.p-divider-horizontal {
+        &:before {
+            border-top-color: #{$borderColor};
+        }
+    }
+
+    &.p-divider-vertical {
+        &:before {
+            border-left-color: #{$borderColor};
+        }
+    }
+
+    .p-divider-content {
+        background: #1e293b;
+        color: #e0e0e0;
+
+        &:before,
+        &:after {
+            border-color: #{$borderColor};
+        }
+    }
+}
+
+// Alternative approach with more specific targeting
+.p-divider {
+    border-color: #{$borderColor};
+
+    &:before {
+        border-color: #{$borderColor};
+    }
+}
+
 .p-divider .p-divider-content:before,
 .p-divider .p-divider-content:after {
     border-color: #{$borderColor};
@@ -799,6 +839,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 .p-dialog::-webkit-scrollbar-thumb:hover {
     background: #475569;
 }
+
 //*------------------------------ Scrollbar ------------------------------*//
 
 //*------------------------------ Steps ------------------------------*//
@@ -829,7 +870,7 @@ $scrollbarThumbHoverBg: #475569 !default;
                 .p-steps-title {
                     color: #ffffff;
                 }
-                
+
                 // Don't change number background on hover
                 .p-steps-number {
                     color: #ffffff;
@@ -838,6 +879,7 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
 
         &.p-highlight .p-menuitem-link {
+
             // Don't modify .p-steps-number background for active state
             .p-steps-number {
                 color: #ffffff;
@@ -850,6 +892,7 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
 
         &.p-steps-current .p-menuitem-link {
+
             // Don't modify .p-steps-number background for current state
             .p-steps-number {
                 color: #ffffff;
@@ -875,4 +918,5 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
     }
 }
+
 //*------------------------------ Steps ------------------------------*//
