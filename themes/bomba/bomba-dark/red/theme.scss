@@ -106,7 +106,7 @@ $tabsDisabledColor: #6b7280 !default;
 // Dialog
 $dialogBg: #1e293b !default;
 $dialogHeaderBg: #334155 !default;
-$dialogContentBg: #1e293b !default;
+$dialogContentBg: #334155 !default;
 $dialogFooterBg: #334155 !default;
 $dialogBorder: #{$borderColor} !default;
 $dialogTextColor: #e0e0e0 !default;
@@ -493,18 +493,18 @@ $scrollbarThumbHoverBg: #475569 !default;
     border-color: #{$borderColor};
 
     .p-dialog-header {
-        background: #334155;
+        background: #{$dialogHeaderBg};
         color: #ffffff;
         border-color: #{$borderColor};
     }
 
     .p-dialog-content {
-        background: #1e293b;
+        background: #{$dialogContentBg};
         color: #e0e0e0;
     }
 
     .p-dialog-footer {
-        background: #334155;
+        background: #{$dialogFooterBg};
         border-color: #{$borderColor};
     }
 }
