@@ -1,7 +1,7 @@
-$primaryColor: #e74c3c !default;
+$primaryColor: #7F1D29 !default;
 $primaryLightColor: #2d3436 !default;
 $primaryDarkColor: #c0392b !default;
-$primaryDarkerColor: #922b21 !default;
+$primaryDarkerColor: #7F1D29 !default;
 $primaryTextColor: #ffffff !default;
 
 $highlightBg: #1a0f0f !default;
@@ -44,7 +44,7 @@ $inputBg: #1e293b !default;
 $inputTextColor: #e0e0e0 !default;
 $inputBorder: #3a3a3a !default;
 $inputHoverBorder: #475569 !default;
-$inputFocusBorder: #e74c3c !default;
+$inputFocusBorder: #{$primaryColor} !default;
 $inputPlaceholderColor: #888888 !default;
 
 // Skeleton
@@ -54,27 +54,27 @@ $skeletonAnimationBg: #475569 !default;
 // Stepper
 $stepperBg: #1e293b !default;
 $stepperHeaderBg: #334155 !default;
-$stepperActiveHeaderBg: #e74c3c !default;
+$stepperActiveHeaderBg: #{$primaryColor} !default;
 $stepperCompletedHeaderBg: #22c55e !default;
 $stepperContentBg: #1e293b !default;
 $stepperBorder: #3a3a3a !default;
 $stepperTextColor: #e0e0e0 !default;
 $stepperActiveTextColor: #ffffff !default;
 $stepperNumberBg: #475569 !default;
-$stepperActiveNumberBg: #e74c3c !default;
+$stepperActiveNumberBg: #{$primaryColor} !default;
 $stepperCompletedNumberBg: #22c55e !default;
 $stepperConnectorColor: #3a3a3a !default;
-$stepperActiveConnectorColor: #e74c3c !default;
+$stepperActiveConnectorColor: #{$primaryColor} !default;
 
 // FileUpload
 $fileuploadBg: #1e293b !default;
 $fileuploadHeaderBg: #334155 !default;
 $fileuploadContentBg: #1e293b !default;
 $fileuploadBorder: #{$borderColor} !default;
-$fileuploadDragBorder: #e74c3c !default;
+$fileuploadDragBorder: #{$primaryColor} !default;
 $fileuploadDragBg: rgba(231, 76, 60, 0.1) !default;
 $fileuploadTextColor: #e0e0e0 !default;
-$fileuploadButtonBg: #e74c3c !default;
+$fileuploadButtonBg: #{$primaryColor} !default;
 $fileuploadButtonHoverBg: #c0392b !default;
 $fileuploadProgressBg: #475569 !default;
 $fileuploadProgressValueBg: #22c55e !default;
@@ -89,7 +89,7 @@ $fieldsetBorder: #{$borderColor} !default;
 $fieldsetTextColor: #e0e0e0 !default;
 $fieldsetLegendColor: #ffffff !default;
 $fieldsetToggleColor: #e0e0e0 !default;
-$fieldsetToggleHoverColor: #e74c3c !default;
+$fieldsetToggleHoverColor: #{$primaryColor} !default;
 
 // Tabs
 $tabsBg: #1e293b !default;
@@ -99,8 +99,8 @@ $tabsBorder: #{$borderColor} !default;
 $tabsTextColor: #e0e0e0 !default;
 $tabsActiveTextColor: #ffffff !default;
 $tabsHoverBg: #475569 !default;
-$tabsActiveBg: #e74c3c !default;
-$tabsActiveIndicator: #e74c3c !default;
+$tabsActiveBg: #{$primaryColor} !default;
+$tabsActiveIndicator: #{$primaryColor} !default;
 $tabsDisabledColor: #6b7280 !default;
 
 // Dialog
@@ -137,7 +137,7 @@ $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90
 // Steps
 $stepsBg: #1e293b !default;
 $stepsNumberBg: #475569 !default;
-$stepsActiveNumberBg: #e74c3c !default;
+$stepsActiveNumberBg: #{$primaryColor} !default;
 $stepsCompletedNumberBg: #22c55e !default;
 $stepsTextColor: #e0e0e0 !default;
 $stepsActiveTextColor: #ffffff !default;
@@ -376,7 +376,7 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
 
         &.p-highlight {
-            background: #e74c3c;
+            background: #{$primaryColor};
             color: #ffffff;
         }
     }
@@ -400,7 +400,7 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     &:focus {
-        border-color: #e74c3c;
+        border-color: #{$primaryColor};
         box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
     }
 }
@@ -438,7 +438,7 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
 
         &.p-highlight {
-            background: #e74c3c;
+            background: #{$primaryColor};
             color: #ffffff;
         }
     }
@@ -461,7 +461,7 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     .p-multiselect-token {
-        background: #e74c3c;
+        background: #{$primaryColor};
         color: #ffffff;
     }
 }
@@ -478,7 +478,7 @@ $scrollbarThumbHoverBg: #475569 !default;
         }
 
         &.p-highlight {
-            background: #e74c3c;
+            background: #{$primaryColor};
             color: #ffffff;
         }
     }
@@ -566,7 +566,7 @@ $scrollbarThumbHoverBg: #475569 !default;
             &.p-highlight {
                 background: #1a0f0f;
                 color: #d0d0d0;
-                border-color: #e74c3c;
+                border-color: #{$primaryColor};
             }
         }
     }
@@ -592,7 +592,7 @@ $scrollbarThumbHoverBg: #475569 !default;
         border-color: #{$borderColor};
 
         &.p-fieldset-toggleable:hover {
-            background: #e74c3c;
+            background: #{$primaryColor};
             color: #ffffff;
         }
     }
@@ -616,9 +616,9 @@ $scrollbarThumbHoverBg: #475569 !default;
         border-color: #{$borderColor};
 
         .p-button {
-            background: #e74c3c;
+            background: #{$primaryColor};
             color: #ffffff;
-            border-color: #e74c3c;
+            border-color: #{$primaryColor};
 
             &:hover {
                 background: #c0392b;
@@ -660,7 +660,7 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     a {
-        color: #e74c3c;
+        color: #{$primaryColor};
 
         &:hover {
             color: #2d3436;
@@ -699,9 +699,9 @@ $scrollbarThumbHoverBg: #475569 !default;
 
     .p-stepper-header.p-highlight {
         .p-stepper-number {
-            background: #e74c3c;
+            background: #{$primaryColor};
             color: #ffffff;
-            border-color: #e74c3c;
+            border-color: #{$primaryColor};
         }
 
         .p-stepper-title {
@@ -900,7 +900,7 @@ $scrollbarThumbHoverBg: #475569 !default;
             }
 
             .p-steps-title {
-                color: #e74c3c;
+                color: #{$primaryColor};
             }
         }
 
