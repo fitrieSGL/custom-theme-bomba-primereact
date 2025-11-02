@@ -13,7 +13,9 @@ $textColor: #e0e0e0 !default; // Primary text
 $textColorSecondary: #b0b0b0 !default; // Secondary text
 $textColorMuted: #888888 !default; // Muted text
 
-
+$darkBgOne: #1e293b !default;
+$darkBgTwo: #334155 !default;
+$darkBgThree: #475569 !default;
 
 //*-------------------------- Custom colors --------------------------*//
 // Custom colors
@@ -28,89 +30,89 @@ $customCardBorder: #3a3a3a !default;
 $borderColor: #3a3a3a !default;
 
 // DataTable Dark Mode Colors
-$datatableBg: #1e293b !default;
-$datatableHeaderBg: #334155 !default;
-$datatableRowBg: #1e293b !default;
+$datatableBg: #{$darkBgOne} !default;
+$datatableHeaderBg: #{$darkBgTwo} !default;
+$datatableRowBg: #{$darkBgOne} !default;
 $datatableRowHoverBg: #2d3748 !default;
 $datatableRowAltBg: #262f3d !default;
-$datatableTextColor: #e0e0e0 !default;
-$datatableHeaderTextColor: #ffffff !default;
-$datatablePaginationBg: #334155 !default;
-$datatablePaginationTextColor: #e0e0e0 !default;
-$datatablePaginationHoverBg: #475569 !default;
+$datatableTextColor: #{$textColor} !default;
+$datatableHeaderTextColor: #{$primaryTextColor} !default;
+$datatablePaginationBg: #{$darkBgTwo} !default;
+$datatablePaginationTextColor: #{$textColor} !default;
+$datatablePaginationHoverBg: #{$darkBgThree} !default;
 
 // Input Components Dark Mode
-$inputBg: #1e293b !default;
-$inputTextColor: #e0e0e0 !default;
+$inputBg: #{$darkBgOne} !default;
+$inputTextColor: #{$textColor} !default;
 $inputBorder: #3a3a3a !default;
-$inputHoverBorder: #475569 !default;
+$inputHoverBorder: #{$darkBgThree} !default;
 $inputFocusBorder: #{$primaryColor} !default;
-$inputPlaceholderColor: #888888 !default;
+$inputPlaceholderColor: #{$textColorMuted} !default;
 
 // Skeleton
-$skeletonBg: #334155 !default;
-$skeletonAnimationBg: #475569 !default;
+$skeletonBg: #{$darkBgTwo} !default;
+$skeletonAnimationBg: #{$darkBgThree} !default;
 
 // Stepper
-$stepperBg: #1e293b !default;
-$stepperHeaderBg: #334155 !default;
+$stepperBg: #{$darkBgOne} !default;
+$stepperHeaderBg: #{$darkBgTwo} !default;
 $stepperActiveHeaderBg: #{$primaryColor} !default;
 $stepperCompletedHeaderBg: #22c55e !default;
-$stepperContentBg: #1e293b !default;
+$stepperContentBg: #{$darkBgOne} !default;
 $stepperBorder: #3a3a3a !default;
-$stepperTextColor: #e0e0e0 !default;
-$stepperActiveTextColor: #ffffff !default;
-$stepperNumberBg: #475569 !default;
+$stepperTextColor: #{$textColor} !default;
+$stepperActiveTextColor: #{$primaryTextColor} !default;
+$stepperNumberBg: #{$darkBgThree} !default;
 $stepperActiveNumberBg: #{$primaryColor} !default;
 $stepperCompletedNumberBg: #22c55e !default;
 $stepperConnectorColor: #3a3a3a !default;
 $stepperActiveConnectorColor: #{$primaryColor} !default;
 
 // FileUpload
-$fileuploadBg: #1e293b !default;
-$fileuploadHeaderBg: #334155 !default;
-$fileuploadContentBg: #1e293b !default;
+$fileuploadBg: #{$darkBgOne} !default;
+$fileuploadHeaderBg: #{$darkBgTwo} !default;
+$fileuploadContentBg: #{$darkBgOne} !default;
 $fileuploadBorder: #{$borderColor} !default;
 $fileuploadDragBorder: #{$primaryColor} !default;
 $fileuploadDragBg: rgba(231, 76, 60, 0.1) !default;
-$fileuploadTextColor: #e0e0e0 !default;
+$fileuploadTextColor: #{$textColor} !default;
 $fileuploadButtonBg: #{$primaryColor} !default;
 $fileuploadButtonHoverBg: #c0392b !default;
-$fileuploadProgressBg: #475569 !default;
+$fileuploadProgressBg: #{$darkBgThree} !default;
 $fileuploadProgressValueBg: #22c55e !default;
-$fileuploadFileBg: #334155 !default;
-$fileuploadFileHoverBg: #475569 !default;
+$fileuploadFileBg: #{$darkBgTwo} !default;
+$fileuploadFileHoverBg: #{$darkBgThree} !default;
 
 // Fieldset
-$fieldsetBg: #1e293b !default;
-$fieldsetHeaderBg: #334155 !default;
-$fieldsetContentBg: #1e293b !default;
+$fieldsetBg: #{$darkBgOne} !default;
+$fieldsetHeaderBg: #{$darkBgTwo} !default;
+$fieldsetContentBg: #{$darkBgOne} !default;
 $fieldsetBorder: #{$borderColor} !default;
-$fieldsetTextColor: #e0e0e0 !default;
-$fieldsetLegendColor: #ffffff !default;
-$fieldsetToggleColor: #e0e0e0 !default;
+$fieldsetTextColor: #{$textColor} !default;
+$fieldsetLegendColor: #{$primaryTextColor} !default;
+$fieldsetToggleColor: #{$textColor} !default;
 $fieldsetToggleHoverColor: #{$primaryColor} !default;
 
 // Tabs
-$tabsBg: #1e293b !default;
-$tabsNavBg: #334155 !default;
-$tabsContentBg: #1e293b !default;
+$tabsBg: #{$darkBgOne} !default;
+$tabsNavBg: #{$darkBgTwo} !default;
+$tabsContentBg: #{$darkBgOne} !default;
 $tabsBorder: #{$borderColor} !default;
-$tabsTextColor: #e0e0e0 !default;
-$tabsActiveTextColor: #ffffff !default;
-$tabsHoverBg: #475569 !default;
+$tabsTextColor: #{$textColor} !default;
+$tabsActiveTextColor: #{$primaryTextColor} !default;
+$tabsHoverBg: #{$darkBgThree} !default;
 $tabsActiveBg: #{$primaryColor} !default;
 $tabsActiveIndicator: #{$primaryColor} !default;
 $tabsDisabledColor: #6b7280 !default;
 
 // Dialog
-$dialogBg: #1e293b !default;
-$dialogHeaderBg: #334155 !default;
-$dialogContentBg: #334155 !default;
-$dialogFooterBg: #334155 !default;
+$dialogBg: #{$darkBgOne} !default;
+$dialogHeaderBg: #{$darkBgTwo} !default;
+$dialogContentBg: #{$darkBgTwo} !default;
+$dialogFooterBg: #{$darkBgTwo} !default;
 $dialogBorder: #{$borderColor} !default;
-$dialogTextColor: #e0e0e0 !default;
-$dialogHeaderTextColor: #ffffff !default;
+$dialogTextColor: #{$textColor} !default;
+$dialogHeaderTextColor: #{$primaryTextColor} !default;
 $dialogMaskBg: rgba(0, 0, 0, 0.6) !default;
 
 // Card
@@ -119,37 +121,37 @@ $cardHeaderBg: #{$customCardColorOne} !default;
 $cardContentBg: #{$customCardColorOne} !default;
 $cardFooterBg: #{$customCardColorOne} !default;
 $cardBorder: #{$borderColor} !default;
-$cardTextColor: #e0e0e0 !default;
-$cardHeaderTextColor: #ffffff !default;
-$cardTitleColor: #ffffff !default;
+$cardTextColor: #{$textColor} !default;
+$cardHeaderTextColor: #{$primaryTextColor} !default;
+$cardTitleColor: #{$primaryTextColor} !default;
 $cardSubtitleColor: #b0b0b0 !default;
 
 // OverlayPanel
-$overlayPanelBg: #1e293b !default;
+$overlayPanelBg: #{$darkBgOne} !default;
 $overlayPanelBorder: #{$borderColor} !default;
-$overlayPanelTextColor: #e0e0e0 !default;
+$overlayPanelTextColor: #{$textColor} !default;
 $overlayPanelShadow: rgba(0, 0, 0, 0.5) !default;
-$overlayPanelArrowColor: #1e293b !default;
+$overlayPanelArrowColor: #{$darkBgOne} !default;
 
 // leaflet
 $leafletFilterColor: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !default;
 
 // Steps
-$stepsBg: #1e293b !default;
-$stepsNumberBg: #475569 !default;
+$stepsBg: #{$darkBgOne} !default;
+$stepsNumberBg: #{$darkBgThree} !default;
 $stepsActiveNumberBg: #{$primaryColor} !default;
 $stepsCompletedNumberBg: #22c55e !default;
-$stepsTextColor: #e0e0e0 !default;
-$stepsActiveTextColor: #ffffff !default;
+$stepsTextColor: #{$textColor} !default;
+$stepsActiveTextColor: #{$primaryTextColor} !default;
 $stepsDisabledColor: #6b7280 !default;
-$stepsHoverBg: #475569 !default;
+$stepsHoverBg: #{$darkBgThree} !default;
 $stepsBorder: #{$borderColor} !default;
 
 // Scrollbar
 $scrollbarWidth: 8px !default;
-$scrollbarTrackBg: #1e293b !default;
+$scrollbarTrackBg: #{$darkBgOne} !default;
 $scrollbarThumbBg: #{$borderColor} !default;
-$scrollbarThumbHoverBg: #475569 !default;
+$scrollbarThumbHoverBg: #{$darkBgThree} !default;
 //*-------------------------- Custom colors --------------------------*//
 
 
@@ -306,25 +308,25 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ DataTable ------------------------------*//
 .p-datatable {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-datatable-header {
-        background: #334155;
-        color: #ffffff;
+        background: #{$darkBgTwo};
+        color: #{$primaryTextColor};
         border-color: #{$borderColor};
     }
 
     .p-datatable-thead>tr>th {
-        background: #334155;
-        color: #ffffff;
+        background: #{$darkBgTwo};
+        color: #{$primaryTextColor};
         border-color: #{$borderColor};
     }
 
     .p-datatable-tbody>tr {
-        background: #1e293b;
-        color: #e0e0e0;
+        background: #{$darkBgOne};
+        color: #{$textColor};
         border-color: #{$borderColor};
 
         &:nth-child(even) {
@@ -341,15 +343,15 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     .p-datatable-tfoot>tr>td {
-        background: #334155 !important;
-        color: #ffffff !important;
+        background: #{$darkBgTwo} !important;
+        color: #{$primaryTextColor} !important;
         border-color: #{$borderColor};
         font-weight: bold;
     }
 
     .p-datatable-footer {
-        background: #334155;
-        color: #ffffff;
+        background: #{$darkBgTwo};
+        color: #{$primaryTextColor};
         border-color: #{$borderColor};
     }
 }
@@ -358,8 +360,8 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Paginator ------------------------------*//
 .p-paginator {
-    background: #334155;
-    color: #e0e0e0;
+    background: #{$darkBgTwo};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-paginator-page,
@@ -368,16 +370,16 @@ $scrollbarThumbHoverBg: #475569 !default;
     .p-paginator-first,
     .p-paginator-last {
         background: transparent;
-        color: #e0e0e0;
+        color: #{$textColor};
         border-color: #{$borderColor};
 
         &:hover {
-            background: #475569;
+            background: #{$darkBgThree};
         }
 
         &.p-highlight {
             background: #{$primaryColor};
-            color: #ffffff;
+            color: #{$primaryTextColor};
         }
     }
 }
@@ -387,16 +389,16 @@ $scrollbarThumbHoverBg: #475569 !default;
 //*------------------------------ Input Components ------------------------------*//
 .p-inputtext,
 .p-inputtextarea {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     &::placeholder {
-        color: #888888;
+        color: #{$textColorMuted};
     }
 
     &:hover {
-        border-color: #475569;
+        border-color: #{$darkBgThree};
     }
 
     &:focus {
@@ -409,37 +411,37 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Dropdown ------------------------------*//
 .p-dropdown {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-dropdown-label {
-        color: #e0e0e0;
+        color: #{$textColor};
 
         &.p-placeholder {
-            color: #888888;
+            color: #{$textColorMuted};
         }
     }
 
     .p-dropdown-trigger {
-        color: #e0e0e0;
+        color: #{$textColor};
     }
 }
 
 .p-dropdown-panel {
-    background: #1e293b;
+    background: #{$darkBgOne};
     border-color: #{$borderColor};
 
     .p-dropdown-item {
-        color: #e0e0e0;
+        color: #{$textColor};
 
         &:hover {
-            background: #475569;
+            background: #{$darkBgThree};
         }
 
         &.p-highlight {
             background: #{$primaryColor};
-            color: #ffffff;
+            color: #{$primaryTextColor};
         }
     }
 }
@@ -448,38 +450,38 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ MultiSelect ------------------------------*//
 .p-multiselect {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-multiselect-label {
-        color: #e0e0e0;
+        color: #{$textColor};
 
         &.p-placeholder {
-            color: #888888;
+            color: #{$textColorMuted};
         }
     }
 
     .p-multiselect-token {
         background: #{$primaryColor};
-        color: #ffffff;
+        color: #{$primaryTextColor};
     }
 }
 
 .p-multiselect-panel {
-    background: #1e293b;
+    background: #{$darkBgOne};
     border-color: #{$borderColor};
 
     .p-multiselect-item {
-        color: #e0e0e0;
+        color: #{$textColor};
 
         &:hover {
-            background: #475569;
+            background: #{$darkBgThree};
         }
 
         &.p-highlight {
             background: #{$primaryColor};
-            color: #ffffff;
+            color: #{$primaryTextColor};
         }
     }
 }
@@ -488,19 +490,19 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Dialog ------------------------------*//
 .p-dialog {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-dialog-header {
         background: #{$dialogHeaderBg};
-        color: #ffffff;
+        color: #{$primaryTextColor};
         border-color: #{$borderColor};
     }
 
     .p-dialog-content {
         background: #{$dialogContentBg};
-        color: #e0e0e0;
+        color: #{$textColor};
     }
 
     .p-dialog-footer {
@@ -518,7 +520,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 //*------------------------------ Card ------------------------------*//
 .p-card {
     background: #{$cardBg};
-    color: #e0e0e0;
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-card-header {
@@ -546,21 +548,21 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Tabs ------------------------------*//
 .p-tabview {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
 
     .p-tabview-nav {
-        background: #334155;
+        background: #{$darkBgTwo};
         border-color: #{$borderColor};
 
         .p-tabview-nav-link {
             background: transparent;
-            color: #e0e0e0;
+            color: #{$textColor};
             border-color: transparent;
 
             &:hover {
-                background: #475569;
-                color: #ffffff;
+                background: #{$darkBgThree};
+                color: #{$primaryTextColor};
             }
 
             &.p-highlight {
@@ -572,9 +574,9 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     .p-tabview-panels {
-        background: #1e293b;
+        background: #{$darkBgOne};
         border-color: #{$borderColor};
-        color: #e0e0e0;
+        color: #{$textColor};
     }
 }
 
@@ -582,24 +584,24 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Fieldset ------------------------------*//
 .p-fieldset {
-    background: #1e293b;
+    background: #{$darkBgOne};
     border-color: #{$borderColor};
-    color: #e0e0e0;
+    color: #{$textColor};
 
     .p-fieldset-legend {
-        background: #334155;
-        color: #ffffff;
+        background: #{$darkBgTwo};
+        color: #{$primaryTextColor};
         border-color: #{$borderColor};
 
         &.p-fieldset-toggleable:hover {
             background: #{$primaryColor};
-            color: #ffffff;
+            color: #{$primaryTextColor};
         }
     }
 
     .p-fieldset-content {
-        background: #1e293b;
-        color: #e0e0e0;
+        background: #{$darkBgOne};
+        color: #{$textColor};
     }
 }
 
@@ -607,17 +609,17 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ FileUpload ------------------------------*//
 .p-fileupload {
-    background: #1e293b;
+    background: #{$darkBgOne};
     border-color: #{$borderColor};
-    color: #e0e0e0;
+    color: #{$textColor};
 
     .p-fileupload-buttonbar {
-        background: #334155;
+        background: #{$darkBgTwo};
         border-color: #{$borderColor};
 
         .p-button {
             background: #{$primaryColor};
-            color: #ffffff;
+            color: #{$primaryTextColor};
             border-color: #{$primaryColor};
 
             &:hover {
@@ -628,8 +630,8 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     .p-fileupload-content {
-        background: #1e293b;
-        color: #e0e0e0;
+        background: #{$darkBgOne};
+        color: #{$textColor};
     }
 }
 
@@ -637,16 +639,16 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ OverlayPanel ------------------------------*//
 .p-overlaypanel {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-overlaypanel-close {
-        color: #e0e0e0;
+        color: #{$textColor};
 
         &:hover {
             background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
+            color: #{$primaryTextColor};
         }
     }
 
@@ -656,7 +658,7 @@ $scrollbarThumbHoverBg: #475569 !default;
     h4,
     h5,
     h6 {
-        color: #ffffff;
+        color: #{$primaryTextColor};
     }
 
     a {
@@ -672,10 +674,10 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Skeleton ------------------------------*//
 .p-skeleton {
-    background: #334155;
+    background: #{$darkBgTwo};
 
     &::after {
-        background: linear-gradient(90deg, transparent, #475569, transparent);
+        background: linear-gradient(90deg, transparent, #{$darkBgThree}, transparent);
     }
 }
 
@@ -683,29 +685,29 @@ $scrollbarThumbHoverBg: #475569 !default;
 
 //*------------------------------ Stepper ------------------------------*//
 .p-stepper {
-    background: #1e293b;
-    color: #e0e0e0;
+    background: #{$darkBgOne};
+    color: #{$textColor};
     border-color: #{$borderColor};
 
     .p-stepper-number {
-        background: #475569;
-        color: #e0e0e0;
+        background: #{$darkBgThree};
+        color: #{$textColor};
         border-color: #{$borderColor};
     }
 
     .p-stepper-title {
-        color: #e0e0e0;
+        color: #{$textColor};
     }
 
     .p-stepper-header.p-highlight {
         .p-stepper-number {
             background: #{$primaryColor};
-            color: #ffffff;
+            color: #{$primaryTextColor};
             border-color: #{$primaryColor};
         }
 
         .p-stepper-title {
-            color: #ffffff;
+            color: #{$primaryTextColor};
         }
     }
 }
@@ -727,8 +729,8 @@ $scrollbarThumbHoverBg: #475569 !default;
     }
 
     .p-divider-content {
-        background: #1e293b;
-        color: #e0e0e0;
+        background: #{$darkBgOne};
+        color: #{$textColor};
 
         &:before,
         &:after {
@@ -757,7 +759,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 // Global scrollbar styling for all browsers
 * {
     scrollbar-width: thin;
-    scrollbar-color: #{$borderColor} #1e293b;
+    scrollbar-color: #{$borderColor} #{$darkBgOne};
 }
 
 // Webkit scrollbar styling (Chrome, Safari, Edge)
@@ -767,18 +769,18 @@ $scrollbarThumbHoverBg: #475569 !default;
 }
 
 ::-webkit-scrollbar-track {
-    background: #1e293b;
+    background: #{$darkBgOne};
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #{$borderColor};
     border-radius: 4px;
-    border: 1px solid #1e293b;
+    border: 1px solid #{$darkBgOne};
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #{$darkBgThree};
 }
 
 ::-webkit-scrollbar-thumb:active {
@@ -786,7 +788,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 }
 
 ::-webkit-scrollbar-corner {
-    background: #1e293b;
+    background: #{$darkBgOne};
 }
 
 // Component-specific scrollbars
@@ -801,7 +803,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 }
 
 .p-datatable-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #{$darkBgThree};
 }
 
 .p-dropdown-panel::-webkit-scrollbar,
@@ -820,7 +822,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 .p-dropdown-panel::-webkit-scrollbar-thumb:hover,
 .p-multiselect-panel::-webkit-scrollbar-thumb:hover,
 .p-autocomplete-panel::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #{$darkBgThree};
 }
 
 .p-dialog::-webkit-scrollbar {
@@ -828,7 +830,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 }
 
 .p-dialog::-webkit-scrollbar-track {
-    background: #1e293b;
+    background: #{$darkBgOne};
 }
 
 .p-dialog::-webkit-scrollbar-thumb {
@@ -837,7 +839,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 }
 
 .p-dialog::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #{$darkBgThree};
 }
 
 //*------------------------------ Scrollbar ------------------------------*//
@@ -845,35 +847,35 @@ $scrollbarThumbHoverBg: #475569 !default;
 //*------------------------------ Steps ------------------------------*//
 .p-steps {
     // background: #{$stepsBg};
-    color: #e0e0e0;
+    color: #{$textColor};
 
     .p-steps-item {
         .p-menuitem-link {
             background: transparent;
-            color: #e0e0e0;
+            color: #{$textColor};
             border-color: transparent;
 
             // Don't modify .p-steps-number background colors
             .p-steps-number {
-                color: #e0e0e0;
+                color: #{$textColor};
                 border-color: #{$borderColor};
             }
 
             .p-steps-title {
-                color: #e0e0e0;
+                color: #{$textColor};
             }
 
             &:hover {
-                background: #475569;
-                color: #ffffff;
+                background: #{$darkBgThree};
+                color: #{$primaryTextColor};
 
                 .p-steps-title {
-                    color: #ffffff;
+                    color: #{$primaryTextColor};
                 }
 
                 // Don't change number background on hover
                 .p-steps-number {
-                    color: #ffffff;
+                    color: #{$primaryTextColor};
                 }
             }
         }
@@ -882,12 +884,12 @@ $scrollbarThumbHoverBg: #475569 !default;
 
             // Don't modify .p-steps-number background for active state
             .p-steps-number {
-                color: #ffffff;
+                color: #{$primaryTextColor};
                 border-color: transparent;
             }
 
             .p-steps-title {
-                color: #ffffff;
+                color: #{$primaryTextColor};
             }
         }
 
@@ -895,7 +897,7 @@ $scrollbarThumbHoverBg: #475569 !default;
 
             // Don't modify .p-steps-number background for current state
             .p-steps-number {
-                color: #ffffff;
+                color: #{$primaryTextColor};
                 border-color: transparent;
             }
 
