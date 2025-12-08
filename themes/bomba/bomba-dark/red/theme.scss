@@ -922,3 +922,51 @@ $scrollbarThumbHoverBg: #{$darkBgThree} !default;
 }
 
 //*------------------------------ Steps ------------------------------*//
+
+//*------------------------------ Accordion ------------------------------*//
+.p-accordion {
+    background: #{$darkBgOne};
+    color: #{$textColor};
+
+    .p-accordion-header {
+        .p-accordion-header-link {
+            background: #{$darkBgTwo};
+            color: #{$textColor};
+            border-color: #{$borderColor};
+
+            &:hover {
+                background: #{$darkBgThree};
+                color: #{$primaryTextColor};
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+            }
+        }
+
+        &:not(.p-disabled).p-highlight {
+            .p-accordion-header-link {
+                background: #{$primaryColor};
+                color: #{$primaryTextColor};
+                border-color: #{$primaryColor};
+
+                &:hover {
+                    background: #{$primaryDarkColor};
+                    border-color: #{$primaryDarkColor};
+                }
+            }
+        }
+    }
+
+    .p-accordion-content {
+        background: #{$darkBgOne};
+        color: #{$textColor};
+        border-color: #{$borderColor};
+    }
+
+    .p-accordion-tab {
+        border-color: #{$borderColor};
+    }
+}
+
+//*------------------------------ Accordion ------------------------------*//
